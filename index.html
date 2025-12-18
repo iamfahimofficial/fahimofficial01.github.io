@@ -3,48 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fahim Ahammad Mazumder | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
+    <title>Fahim Ahammad Mazumder | Cyber Specialist</title>
     <style>
+        /* Modern Dark Theme Variables */
         :root {
-            --primary: #1a2a6c;
-            --secondary: #b21f1f;
-            --accent: #fdbb2d;
-            --text-dark: #333;
-            --text-light: #666;
-            --bg-light: #f4f7f6;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            --bg-dark: #0a0b10;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --accent-blue: #00d2ff;
+            --accent-green: #3ad50b;
+            --text-main: #e0e0e0;
+            --text-dim: #a0a0a0;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at 50% 50%, #1a1b26 0%, #0a0b10 100%);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
             line-height: 1.6;
         }
 
-        /* বাংলা ফন্টের জন্য আলাদা ক্লাস */
-        .bn-text {
-            font-family: 'Hind Siliguri', sans-serif;
-        }
-
-        /* --- Header / Hero Section --- */
         header {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f);
-            color: var(--white);
+            padding: 60px 20px;
             text-align: center;
-            padding: 80px 20px 100px;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
         }
 
-        .profile-img-container {
+        .profile-container {
             position: relative;
             display: inline-block;
         }
@@ -53,290 +40,210 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 5px solid rgba(255, 255, 255, 0.5);
+            border: 3px solid var(--accent-blue);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
             object-fit: cover;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            transition: transform 0.3s;
+            transition: transform 0.3s ease;
         }
 
         .profile-img:hover {
             transform: scale(1.05);
         }
 
-        header h1 {
+        h1 {
             font-size: 2.5rem;
-            margin-top: 15px;
-            font-weight: 700;
+            margin: 15px 0 5px;
+            background: linear-gradient(to right, #fff, var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        header p.tagline {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 20px;
+        .tagline {
+            color: var(--accent-blue);
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
-        .social-icons a {
-            color: var(--white);
-            font-size: 1.2rem;
-            margin: 0 10px;
-            text-decoration: none;
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 8px 15px;
-            border-radius: 20px;
-            transition: background 0.3s;
-        }
-
-        .social-icons a:hover {
-            background: var(--white);
-            color: var(--primary);
-        }
-
-        /* --- Container --- */
         .container {
-            max-width: 1000px;
-            margin: -60px auto 40px; /* Overlaps header */
+            max-width: 850px;
+            margin: -20px auto 50px;
             padding: 0 20px;
         }
 
-        /* --- Card Styles --- */
-        .card {
-            background: var(--white);
-            border-radius: 15px;
+        section {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 30px;
+            border-radius: 20px;
             margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        h2.section-title {
-            color: var(--primary);
-            border-bottom: 2px solid var(--accent);
-            display: inline-block;
-            margin-bottom: 20px;
-            padding-bottom: 5px;
-        }
-
-        /* --- About Section --- */
-        .personal-details {
+        h2 {
+            color: var(--accent-blue);
+            border-bottom: 1px solid rgba(0, 210, 255, 0.2);
+            padding-bottom: 10px;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 20px;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-        
-        .detail-item {
-            background: #eef2f3;
-            padding: 10px 15px;
-            border-radius: 8px;
-            flex: 1 1 45%;
+            align-items: center;
+            gap: 10px;
         }
 
-        /* --- Skills --- */
-        .skills-wrapper {
+        /* Buttons & Links */
+        .social-links {
+            margin: 20px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 1px solid var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        .btn:hover {
+            background: var(--accent-blue);
+            color: #000;
+            box-shadow: 0 0 15px var(--accent-blue);
+        }
+
+        /* Skill Badges */
+        .skills-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
 
-        .skill {
-            background: linear-gradient(45deg, #1a2a6c, #2a4858);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 50px;
+        .skill-tag {
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--accent-blue);
+            padding: 6px 15px;
+            border-radius: 5px;
             font-size: 0.85rem;
-            font-weight: 600;
+            border: 1px solid rgba(0, 210, 255, 0.3);
         }
 
-        /* --- Articles Grid --- */
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .article-box {
-            background: #fff;
-            border: 1px solid #eee;
-            border-radius: 10px;
+        /* Article Cards */
+        .article-card {
+            background: rgba(255,255,255,0.03);
             padding: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent-green);
         }
 
-        .article-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-color: var(--accent);
-        }
+        .article-card h3 { margin-top: 0; color: #fff; }
+        .article-card a { color: var(--accent-green); text-decoration: none; font-size: 0.9rem; }
 
-        .article-box h3 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .read-btn {
-            display: inline-block;
-            margin-top: 15px;
-            color: var(--secondary);
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        /* --- Poetry / Bengali Section --- */
-        .poetry-section {
-            background: #fffbf2; /* Cream color */
-            border-left: 5px solid #ffa502;
-        }
-
-        .poetry-text {
-            font-style: italic;
-            color: #555;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        /* --- Footer --- */
         footer {
             text-align: center;
-            padding: 40px 20px;
-            background: var(--primary);
-            color: rgba(255,255,255,0.7);
+            padding: 40px;
+            color: var(--text-dim);
             font-size: 0.9rem;
-            margin-top: 50px;
         }
 
-        footer a {
-            color: var(--accent);
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 10px;
+        }
+
+        .contact-item a {
+            color: var(--text-main);
             text-decoration: none;
+            display: block;
+            margin-top: 5px;
         }
 
-        /* --- Responsive Tweaks --- */
-        @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
-            .container { margin-top: -40px; }
-            .detail-item { flex: 1 1 100%; }
-        }
+        .contact-item a:hover { color: var(--accent-blue); }
+
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="profile-img-container">
-            <img src="IMG-20251130-WA0008.jpg" alt="Fahim Photo" class="profile-img">
-        </div>
-        <h1>Fahim Ahammad Mazumder</h1>
-        <p class="tagline">Digital Product Marketer | Cyber Security Analyst | Content Writer</p>
-        
-        <div class="social-icons">
-            <a href="https://facebook.com/fbinfaheem" target="_blank">FB</a>
-            <a href="https://instagram.com/fbinfaheem" target="_blank">IG</a>
-            <a href="https://tiktok.com/@fbinfaheem" target="_blank">TikTok</a>
-            <a href="mailto:info@fahimofficial.com">Email</a>
-        </div>
-    </header>
-
-    <div class="container">
-
-        <section class="card">
-            <h2 class="section-title">👤 About Me</h2>
-            <div class="personal-details bn-text">
-                <div class="detail-item">☪️ ধর্ম: ইসলাম (Muslim)</div>
-                <div class="detail-item">🩸 ব্লাড গ্রুপ: AB+</div>
-                <div class="detail-item">🎓 শিক্ষা: CSE, চট্টগ্রাম পলিটেকনিক ইনস্টিটিউট</div>
-                <div class="detail-item">📍 অবস্থান: চট্টগ্রাম, বাংলাদেশ</div>
-            </div>
-            <p style="margin-top: 15px;">
-                I am a passionate <strong>Cyber Security Enthusiast</strong> and <strong>Digital Marketer</strong>. With over 7 months of experience in dropshipping, I now focus on simplifying complex tech concepts through my writing.
-            </p>
-            <div style="margin-top: 20px; text-align: center;">
-                <a href="https://sites.google.com/view/fbindeals" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: none;">👉 View Project Experience</a>
-            </div>
-        </section>
-
-        <section class="card">
-            <h2 class="section-title">🚀 Skills & Expertise</h2>
-            <div class="skills-wrapper">
-                <span class="skill">Cyber Security Research</span>
-                <span class="skill">Python (Basic)</span>
-                <span class="skill">Network Scanning (Nmap)</span>
-                <span class="skill">Linux Commands</span>
-                <span class="skill">Content Writing</span>
-                <span class="skill">Video Editing</span>
-                <span class="skill">Dropshipping</span>
-                <span class="skill">Web Design</span>
-            </div>
-        </section>
-
-        <section class="card" id="articles">
-            <h2 class="section-title">🛡️ Cyber Security Articles</h2>
-            <p style="margin-bottom: 20px; color: var(--text-light);">My latest research and lab experiences:</p>
-            
-            <div class="articles-grid">
-                <div class="article-box">
-                    <h3>🔍 Nmap Scanning Guide</h3>
-                    <p>Learn how to perform basic network scans using Nmap and understand the results step by step.</p>
-                    <a href="#" class="read-btn">Read More →</a>
-                </div>
-
-                <div class="article-box">
-                    <h3>💻 Linux for Hackers</h3>
-                    <p>Top 5 essential Linux commands every beginner hacker needs to master for labs.</p>
-                    <a href="#" class="read-btn">Read More →</a>
-                </div>
-
-                <div class="article-box">
-                    <h3>🎯 TryHackMe Journey</h3>
-                    <p>My experience with the "Complete Beginner" path and tips for newcomers.</p>
-                    <a href="#" class="read-btn">Read More →</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="card poetry-section bn-text">
-            <h2 class="section-title">🌿 চিন্তাভাবনা ও প্রকৃতি</h2>
-            
-            <div class="poetry-content">
-                <p class="poetry-text">
-                    "প্রকৃতি আমাদের সেই নিরব বন্ধু, যে কিছু না বলেও সব কিছু বলে দেয়।
-                    গোধূলির আলো, পাতার ফিসফিসে কথা, আর হাওয়ার স্পর্শে যেন পুরনো প্রেমের গল্প ফিরে আসে…
-                    এই নিসর্গ শুধু চোখে নয়, হৃদয়ে অনুভব করতে হয়।" 🍂
-                </p>
-                <hr style="border: 0; border-top: 1px solid #ddd; margin: 20px 0;">
-                <p class="poetry-text">
-                    "পৃথিবীকে আমার জিজ্ঞেস করতে ইচ্ছে করে!<br>
-                    কেনো মানুষকে নিজেকে জিজ্ঞেস করতে বলে না, যে আমার মতো কোনো এক হতভাগা যেনো আটকে গেছে, সমুদ্রের কোনো এক দ্বীপে...<br>
-                    মানুষ ফিরেও দেখে না...<br>
-                    স্বার্থপরতা যেনো সান্তনা দিতেও রাজি নয়! 🤕"
-                </p>
-            </div>
-        </section>
-
-        <section class="card" style="text-align: center;">
-            <h2 class="section-title">📞 Connect With Me</h2>
-            <p style="margin-bottom: 20px;"><strong>FBin</strong> – Fahim / Business / International / Network</p>
-            
-            <div style="line-height: 2; font-size: 1.1rem;">
-                🌐 <a href="https://www.fahimofficial.com" target="_blank" style="color:var(--primary); text-decoration: none;">www.fahimofficial.com</a><br>
-                📧 <a href="mailto:fbinfaheem@gmail.com" style="color:var(--secondary); text-decoration: none;">fbinfaheem@gmail.com</a><br>
-                📞 <a href="tel:+8801317621550" style="color:var(--text-dark); text-decoration: none;">+88 01317621550</a>
-            </div>
-            
-            <div style="margin-top: 25px;">
-                <a href="https://wa.me/8801317621550" target="_blank" style="background: #25D366; color: white; padding: 10px 20px; border-radius: 30px; text-decoration: none; font-weight: bold;">
-                    Chat on WhatsApp 💬
-                </a>
-            </div>
-        </section>
-
+<header>
+    <div class="profile-container">
+        <img src="your-photo.jpg" alt="Fahim" class="profile-img">
     </div>
+    <h1>Fahim Ahammad Mazumder</h1>
+    <p class="tagline">Cyber Security Specialist • Professional Writer</p>
+    
+    <div class="social-links">
+        <a href="https://sites.google.com/view/fbindeals" class="btn" target="_blank">Projects</a>
+        <a href="https://facebook.com/infofbinfaheem" class="btn" target="_blank">Facebook</a>
+    </div>
+</header>
 
-    <footer>
-        <p>&copy; 2025 Fahim Ahammad Mazumder. All Rights Reserved.</p>
-        <p>Designed with ❤️ in Chattogram</p>
-    </footer>
+<div class="container">
+    <section>
+        <h2>👤 Professional Profile</h2>
+        <p>আমি একজন <b>Professional Article Writer</b> এবং সাইবার সিকিউরিটি এনথুজিয়াস্ট। ড্রপশিপিং এবং ই-কমার্স ম্যানেজমেন্টের অভিজ্ঞতার সাথে এখন আমি ডিজিটাল নিরাপত্তা নিয়ে কাজ করছি।</p>
+        <p>☪️ মুসলিম | 🩸 AB+ | 📍 চট্টগ্রাম, বাংলাদেশ</p>
+    </section>
+
+    <section>
+        <h2>🛡️ Cybersecurity Research</h2>
+        <div class="article-card">
+            <h3>🔍 Nmap Scanning Mastery</h3>
+            <p>কিভাবে প্রফেশনালদের মতো নেটওয়ার্ক স্ক্যান করতে হয় তার বিস্তারিত গাইড।</p>
+            <a href="#">Read Full Article →</a>
+        </div>
+        <div class="article-card">
+            <h3>💻 Linux Commands for Hackers</h3>
+            <p>ইথিক্যাল হ্যাকিং ল্যাবে ব্যবহৃত সেরা ৫টি লিনাক্স কমান্ড।</p>
+            <a href="#">Read Full Article →</a>
+        </div>
+    </section>
+
+    <section>
+        <h2>⚡ Core Skills</h2>
+        <div class="skills-grid">
+            <span class="skill-tag">Cyber Security</span>
+            <span class="skill-tag">Article Writing</span>
+            <span class="skill-tag">Python (Basic)</span>
+            <span class="skill-tag">E-commerce</span>
+            <span class="skill-tag">Web Design</span>
+            <span class="skill-tag">Video Editing</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>📩 Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                🌐 <b>Website</b>
+                <a href="https://www.fahimofficial.com">fahimofficial.com</a>
+            </div>
+            <div class="contact-item">
+                📧 <b>Email</b>
+                <a href="mailto:info@fahimofficial.com">info@fahimofficial.com</a>
+            </div>
+            <div class="contact-item">
+                📞 <b>Phone</b>
+                <a href="tel:+8801317621550">+88 01317621550</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    &copy; 2025 Fahim Ahammad Mazumder | Secure & Professional Content
+</footer>
 
 </body>
 </html>
