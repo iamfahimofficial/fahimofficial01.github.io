@@ -1,277 +1,250 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fahim Ahammad Mazumder | Official Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Fahim Ahammad Mazumder | Cyber Security Specialist & Strategist</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary-blue: #0077ff;
-            --dark-black: #0f172a;
-            --pure-white: #ffffff;
-            --light-blue: #e0f2fe;
-            --glass: rgba(255, 255, 255, 0.85);
+            --bg-base: #020617;
+            --bg-surface: rgba(15, 23, 42, 0.8);
+            --accent-primary: #38bdf8;
+            --accent-secondary: #818cf8;
+            --text-heading: #f8fafc;
+            --text-body: #94a3b8;
+            --glass-border: rgba(255, 255, 255, 0.08);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
-            /* Background Mix: White, Blue, and Black Gradient */
-            background: linear-gradient(135deg, var(--pure-white) 0%, var(--light-blue) 40%, var(--dark-black) 100%);
-            background-attachment: fixed;
-            color: var(--dark-black);
+            background-color: var(--bg-base);
+            color: var(--text-body);
+            font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        /* Hero Section */
-        header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            background: radial-gradient(circle at top right, rgba(0, 119, 255, 0.1), transparent);
+        /* --- Ambient Background --- */
+        .ambient-glow {
+            position: fixed; width: 100vw; height: 100vh; z-index: -1;
+            background: radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.07) 0%, transparent 50%),
+                        radial-gradient(circle at 100% 100%, rgba(129, 140, 248, 0.07) 0%, transparent 50%);
         }
 
-        .profile-card {
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 30px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            max-width: 600px;
-            transition: transform 0.3s ease;
+        /* --- Navigation --- */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 25px 8%;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(15px);
+            z-index: 1000; border-bottom: 1px solid var(--glass-border);
+        }
+        .nav-logo { font-weight: 800; font-size: 1.6rem; color: var(--text-heading); letter-spacing: -1px; }
+        .nav-logo span { color: var(--accent-primary); }
+
+        /* --- Hero Section --- */
+        header.hero {
+            height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center; padding: 0 20px;
+        }
+        .profile-hex {
+            position: relative; width: 200px; height: 200px; margin-bottom: 40px;
+            padding: 8px; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            animation: morph 8s ease-in-out infinite;
+        }
+        @keyframes morph {
+            0%, 100% { border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%; }
+            50% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+        }
+        .profile-img { 
+            width: 100%; height: 100%; border-radius: inherit; 
+            object-fit: cover; border: 4px solid var(--bg-base); 
         }
 
-        .profile-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 5px solid var(--primary-blue);
-            margin-bottom: 20px;
-            object-fit: cover;
-            box-shadow: 0 10px 20px rgba(0, 119, 255, 0.2);
-        }
+        h1 { font-size: 4rem; font-weight: 800; color: var(--text-heading); margin-bottom: 15px; letter-spacing: -2px; }
+        .typing { font-family: 'JetBrains Mono', monospace; color: var(--accent-primary); font-size: 1.1rem; }
 
-        h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--dark-black);
-        }
+        /* --- Section Styling --- */
+        .section-container { max-width: 1200px; margin: auto; padding: 120px 24px; }
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 32px; }
 
-        .typing-text {
-            color: var(--primary-blue);
-            font-weight: 600;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        .glass-card {
+            background: var(--bg-surface); backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border); border-radius: 32px;
+            padding: 48px; position: relative; overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
         }
+        .glass-card:hover { transform: translateY(-12px); border-color: var(--accent-primary); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
 
-        /* Navigation Buttons */
-        .nav-btns {
-            margin-top: 25px;
+        /* --- Article Typography --- */
+        .category-pill { 
+            font-size: 0.65rem; font-weight: 700; text-transform: uppercase; 
+            letter-spacing: 1.5px; color: var(--accent-primary); 
+            background: rgba(56, 189, 248, 0.1); padding: 6px 14px; border-radius: 100px;
         }
-
-        .btn {
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.4s;
-            display: inline-block;
-            margin: 10px;
+        .card-title { font-size: 1.6rem; color: var(--text-heading); margin: 20px 0 15px; font-weight: 700; }
+        .read-btn { 
+            display: flex; align-items: center; gap: 10px; background: none; border: none; 
+            color: var(--accent-primary); cursor: pointer; font-weight: 600; margin-top: 25px; transition: 0.3s;
         }
+        .read-btn:hover { gap: 15px; color: white; }
 
-        .btn-blue {
-            background: var(--primary-blue);
-            color: white;
-            box-shadow: 0 8px 15px rgba(0, 119, 255, 0.3);
+        /* --- Modal System --- */
+        .modal {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(2, 6, 23, 0.95); z-index: 9999; backdrop-filter: blur(15px);
         }
-
-        .btn-outline {
-            border: 2px solid var(--primary-blue);
-            color: var(--primary-blue);
+        .modal-inner {
+            max-width: 800px; margin: 5vh auto; background: #0f172a; border-radius: 40px;
+            padding: 60px; border: 1px solid var(--glass-border); max-height: 90vh; overflow-y: auto;
+            position: relative;
         }
+        .close-modal { position: absolute; top: 30px; right: 30px; font-size: 2rem; color: var(--text-heading); cursor: pointer; }
+        .modal-body h2 { color: var(--accent-primary); font-size: 2.2rem; margin-bottom: 25px; }
+        .modal-body p { margin-bottom: 20px; font-size: 1.1rem; line-height: 1.9; }
 
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        /* --- Footer --- */
+        footer { padding: 100px 24px; text-align: center; border-top: 1px solid var(--glass-border); }
+        .contact-pill {
+            display: inline-flex; align-items: center; gap: 12px;
+            padding: 12px 30px; border-radius: 100px; border: 1px solid var(--accent-primary);
+            color: var(--accent-primary); text-decoration: none; font-weight: 600; margin: 10px;
         }
+        .contact-pill:hover { background: var(--accent-primary); color: #000; }
 
-        /* Content Sections */
-        .container {
-            max-width: 1000px;
-            margin: -50px auto 100px;
-            padding: 0 20px;
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; }
+            .nav-logo { font-size: 1.3rem; }
+            .modal-inner { width: 95%; padding: 30px; }
         }
-
-        section {
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            border-radius: 25px;
-            padding: 40px;
-            margin-bottom: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 25px;
-            color: var(--dark-black);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        h2::after {
-            content: '';
-            height: 4px;
-            width: 60px;
-            background: var(--primary-blue);
-            display: block;
-            border-radius: 2px;
-        }
-
-        /* Skill Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-item {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            border-bottom: 4px solid var(--primary-blue);
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .skill-item:hover {
-            background: var(--primary-blue);
-            color: white;
-        }
-
-        /* Article Cards */
-        .article-card {
-            background: rgba(0, 119, 255, 0.03);
-            border-left: 5px solid var(--dark-black);
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            transition: 0.3s;
-        }
-
-        .article-card:hover {
-            background: var(--pure-white);
-            transform: scale(1.02);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark-black);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-            border-radius: 50px 50px 0 0;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .contact-info a {
-            color: var(--light-blue);
-            text-decoration: none;
-            font-size: 1rem;
-        }
-
     </style>
 </head>
 <body>
 
-<header>
-    <div class="profile-card">
-        <img src="your-photo.jpg" alt="Fahim" class="profile-img">
+    <div class="ambient-glow"></div>
+
+    <nav>
+        <div class="nav-logo">FBIN<span>.</span></div>
+        <a href="mailto:info@fahimofficial.com" class="contact-pill" style="padding: 8px 20px; font-size: 0.8rem;">INQUIRIES</a>
+    </nav>
+
+    <header class="hero">
+        <div class="profile-hex">
+            <img src="FB_IMG_17576597773337071-removebg-preview.png" alt="Fahim" class="profile-img">
+        </div>
         <h1>Fahim Ahammad Mazumder</h1>
-        <p class="typing-text">Cyber Security • Professional Writer</p>
-        
-        <div class="nav-btns">
-            <a href="https://sites.google.com/view/fbindeals" class="btn btn-blue" target="_blank">View Projects</a>
-            <a href="https://facebook.com/infofbinfaheem" class="btn btn-outline" target="_blank">Facebook Page</a>
+        <p class="typing">_SEARCHING_FOR_VULNERABILITIES > ANALYZING_SYSTEMS</p>
+        <div style="margin-top: 40px; display: flex; gap: 15px;">
+            <a href="#about" class="contact-pill" style="background: var(--text-heading); border:none; color: var(--bg-base);">DISCOVER BIO</a>
+            <a href="https://wa.me/8801317621550" class="contact-pill">DIRECT CHAT</a>
+        </div>
+    </header>
+
+    <div class="section-container" id="about">
+        <h2 style="font-size: 3rem; color: var(--text-heading); margin-bottom: 40px; text-align: center;">Executive <span>Briefing</span></h2>
+        <div class="glass-card">
+            <p style="font-size: 1.3rem; color: var(--text-heading); font-weight: 300; line-height: 2;">
+                I am a technical strategist blending the analytical rigor of <span style="color:var(--accent-primary)">Cyber Security</span> with the creative precision of <span style="color:var(--accent-secondary)">Professional Article Writing</span>. With an academic foundation in CSE and over half a year of operational experience in Global Dropshipping & E-commerce, I bridge the gap between complex digital infrastructure and user-centric communication. My mission is to secure digital assets while crafting narratives that resonate in the modern information economy.
+            </p>
+            <div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 30px; font-size: 0.9rem; font-weight: 600;">
+                <span><i class="fa-solid fa-microchip"></i> CSE | CHATTOGRAM POLYTECHNIC</span>
+                <span><i class="fa-solid fa-shield-halved"></i> SECURITY RESEARCHER</span>
+                <span><i class="fa-solid fa-pen-nib"></i> CONTENT SPECIALIST</span>
+            </div>
         </div>
     </div>
-</header>
 
-<div class="container">
-    <section id="about">
-        <h2>👤 Professional Profile</h2>
-        <p style="font-size: 1.1rem; line-height: 1.8;">
-            স্বাগতম! আমি একজন <b>Professional Article Writer</b> এবং সাইবার সিকিউরিটি রিসার্চার। 
-            দীর্ঘ ৭ মাসের ড্রপশিপিং এবং ই-কমার্স অভিজ্ঞতার পর, এখন আমি ডিজিটাল নিরাপত্তা এবং কন্টেন্ট ক্রিয়েশন নিয়ে কাজ করছি। 
-            আমার লক্ষ্য হলো জটিল তথ্যকে সহজভাবে মানুষের সামনে উপস্থাপন করা।
-        </p>
-        <div style="margin-top: 15px; font-weight: 600; color: var(--primary-blue);">
-            📍 Chattogram, Bangladesh | 🩸 Blood: AB+ | 🎓 Studied CSE
-        </div>
-    </section>
+    <div class="section-container">
+        <h2 style="font-size: 2.5rem; color: var(--text-heading); margin-bottom: 60px;">Research & <span>Publications</span></h2>
+        <div class="grid-layout">
+            
+            <div class="glass-card">
+                <span class="category-pill">Network Surveillance</span>
+                <h3 class="card-title">Network Reconnaissance: Advanced Nmap Tactics</h3>
+                <p>An exploration into silent port scanning, service enumeration, and bypassing IDS/Firewall configurations for security auditing...</p>
+                <button class="read-btn" onclick="openMod('nmap')">EXAMINE ARTICLE <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
 
-    <section id="skills">
-        <h2>⚡ Expert Expertise</h2>
-        <div class="grid">
-            <div class="skill-item">Cyber Security</div>
-            <div class="skill-item">Article Writing</div>
-            <div class="skill-item">Dropshipping</div>
-            <div class="skill-item">Python Coding</div>
-            <div class="skill-item">Web Design</div>
-            <div class="skill-item">Video Editing</div>
-        </div>
-    </section>
+            <div class="glass-card">
+                <span class="category-pill">System Hardening</span>
+                <h3 class="card-title">Linux Kernel Security & Server Protection</h3>
+                <p>Comprehensive guide on securing Linux environments, managing root access, and hardening kernels against remote exploits...</p>
+                <button class="read-btn" onclick="openMod('linux')">EXAMINE ARTICLE <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
 
-    <section id="articles">
-        <h2>🛡️ Security Articles</h2>
-        <div class="article-card">
-            <h3>🔍 Nmap Scan Mastery</h3>
-            <p>কিভাবে প্রফেশনাল হ্যাকাররা নেটওয়ার্ক স্ক্যান করে তার পূর্ণাঙ্গ গাইড।</p>
-            <a href="#" style="color: var(--primary-blue); font-weight: bold; text-decoration: none;">Read More →</a>
-        </div>
-        <div class="article-card">
-            <h3>💻 Linux Essential Commands</h3>
-            <p>নতুনদের জন্য সাইবার সিকিউরিটি ল্যাবে ব্যবহৃত প্রধান ৫টি লিনাক্স কমান্ড।</p>
-            <a href="#" style="color: var(--primary-blue); font-weight: bold; text-decoration: none;">Read More →</a>
-        </div>
-    </section>
-</div>
+            <div class="glass-card">
+                <span class="category-pill">Digital Economy</span>
+                <h3 class="card-title">Securing The Dropshipping Infrastructure</h3>
+                <p>How modern E-commerce ventures can defend against SQL injections, payment fraud, and social engineering attacks...</p>
+                <button class="read-btn" onclick="openMod('dropship')">EXAMINE ARTICLE <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
 
-<footer>
-    <h2>Connect With Me</h2>
-    <p>আপনি কি আপনার প্রজেক্টের জন্য সেরা কন্টেন্ট বা সিকিউরিটি কনসালটেশন খুঁজছেন?</p>
-    
-    <div class="contact-info">
-        <a href="https://www.fahimofficial.com">🌐 www.fahimofficial.com</a>
-        <a href="mailto:info@fahimofficial.com">📧 info@fahimofficial.com</a>
-        <a href="tel:+8801317621550">📞 +88 01317621550</a>
+            <div class="glass-card">
+                <span class="category-pill">Cyber Psychology</span>
+                <h3 class="card-title">The Psychology of Social Engineering</h3>
+                <p>Understanding why humans are the weakest link in security chains and how to write content that educates and protects...</p>
+                <button class="read-btn" onclick="openMod('psych')">EXAMINE ARTICLE <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
     </div>
-    <br><br>
-    <p style="opacity: 0.5;">&copy; 2025 Fahim Ahammad Mazumder | Secure & Professional Content</p>
-</footer>
 
+    <div id="infoModal" class="modal">
+        <div class="modal-inner">
+            <span class="close-modal" onclick="closeMod()">&times;</span>
+            <div id="modContent" class="modal-body"></div>
+        </div>
+    </div>
+
+    <footer>
+        <h2 style="color: white; font-size: 2.5rem; margin-bottom: 20px;">Ready for Collaboration?</h2>
+        <p style="margin-bottom: 40px;">Currently accepting high-priority projects in Cyber Security and Professional Content Strategy.</p>
+        <div>
+            <a href="https://facebook.com/infofbinfaheem" class="contact-pill"><i class="fa-brands fa-facebook-f"></i> FACEBOOK</a>
+            <a href="mailto:info@fahimofficial.com" class="contact-pill"><i class="fa-solid fa-envelope"></i> EMAIL US</a>
+        </div>
+        <p style="margin-top: 80px; opacity: 0.3; font-size: 0.8rem; letter-spacing: 2px;">&copy; 2025 FBIN INTERNATIONAL NETWORK | FAHIM AHAMMAD MAZUMDER</p>
+    </footer>
+
+    <script>
+        const contentData = {
+            'nmap': `
+                <h2>Network Reconnaissance Tactics</h2>
+                <p>In the realm of Cyber Security, <b>Reconnaissance</b> is the most critical phase. My research focuses on using Nmap not just as a scanner, but as a diagnostic engine. By utilizing the <i>Nmap Scripting Engine (NSE)</i>, we can automate the detection of vulnerabilities such as Heartbleed or SMB exploits.</p>
+                <p><b>Core Focus:</b> TCP Connect scans, Stealth SYN scans, and Idle scans that allow for complete anonymity during network auditing. I emphasize the importance of timing templates to avoid triggering Intrusion Detection Systems (IDS).</p>
+            `,
+            'linux': `
+                <h2>Linux Hardening Framework</h2>
+                <p>Linux is the foundation of the web, yet its default configuration is often susceptible to privilege escalation. My professional stance on Linux security involves a <b>Zero-Trust Architecture</b>.</p>
+                <p>I specialize in configuring SSH keys for passwordless yet ultra-secure authentication, implementing <i>Fail2Ban</i> to prevent brute-force attacks, and utilizing <i>SELinux</i> or <i>AppArmor</i> to restrict process capabilities. Securing the kernel is the first step in protecting the cloud.</p>
+            `,
+            'dropship': `
+                <h2>The Secure E-commerce Ecosystem</h2>
+                <p>Having spent over 7 months in the Dropshipping sector, I identified a massive gap in security for small-scale entrepreneurs. Most online stores are vulnerable to <b>Cross-Site Scripting (XSS)</b> and data harvesting.</p>
+                <p>My strategy combines high-converting content with backend security. I help businesses secure their Shopify/WooCommerce API gateways and ensure that customer data remains encrypted at every touchpoint of the supply chain.</p>
+            `,
+            'psych': `
+                <h2>Human-Centric Security</h2>
+                <p>Technology can be patched; human psychology cannot. Social engineering remains the top entry point for hackers. In my writing, I break down complex concepts like <i>Phishing</i>, <i>Pretexting</i>, and <i>Baiting</i>.</p>
+                <p>By using professional storytelling, I transform dry security protocols into engaging narratives that stay with the reader, effectively turning a company’s employees into its strongest firewall.</p>
+            `
+        };
+
+        function openMod(id) {
+            document.getElementById('modContent').innerHTML = contentData[id];
+            document.getElementById('infoModal').style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeMod() {
+            document.getElementById('infoModal').style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    </script>
 </body>
 </html>
