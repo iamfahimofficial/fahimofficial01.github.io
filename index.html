@@ -1,127 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fahim Ahammad Mazumder | Cyber Security Specialist & Strategist</title>
+    <title>Fahim Ahammad Mazumder | Cyber Specialist</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-base: #020617;
-            --bg-surface: rgba(15, 23, 42, 0.8);
-            --accent-primary: #38bdf8;
-            --accent-secondary: #818cf8;
-            --text-heading: #f8fafc;
-            --text-body: #94a3b8;
-            --glass-border: rgba(255, 255, 255, 0.08);
+            --bg-deep: #020617;
+            --bg-card: rgba(15, 23, 42, 0.9);
+            --accent-blue: #0ea5e9;
+            --accent-green: #10b981;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-
-        body {
-            background-color: var(--bg-base);
-            color: var(--text-body);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow-x: hidden;
-            line-height: 1.6;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: var(--bg-deep); 
+            color: var(--text-secondary); 
+            line-height: 1.6; 
+            overflow-x: hidden; 
+            font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif;
         }
 
-        /* --- Ambient Background --- */
+        /* Ambient Glow */
         .ambient-glow {
-            position: fixed; width: 100vw; height: 100vh; z-index: -1;
-            background: radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.07) 0%, transparent 50%),
-                        radial-gradient(circle at 100% 100%, rgba(129, 140, 248, 0.07) 0%, transparent 50%);
+            position: fixed; width: 100%; height: 100%; z-index: -1;
+            background: radial-gradient(circle at 5% 5%, rgba(14, 165, 233, 0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 95% 95%, rgba(16, 185, 129, 0.08) 0%, transparent 40%);
         }
 
-        /* --- Navigation --- */
+        /* Navigation */
         nav {
-            position: fixed; top: 0; width: 100%; padding: 25px 8%;
-            display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; width: 100%; padding: 15px 5%;
             background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(15px);
-            z-index: 1000; border-bottom: 1px solid var(--glass-border);
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; border-bottom: 1px solid var(--border);
         }
-        .nav-logo { font-weight: 800; font-size: 1.6rem; color: var(--text-heading); letter-spacing: -1px; }
-        .nav-logo span { color: var(--accent-primary); }
+        .logo { font-weight: 800; font-size: 1.4rem; color: var(--text-primary); letter-spacing: -1px; }
+        .logo span { color: var(--accent-blue); }
 
-        /* --- Hero Section --- */
-        header.hero {
-            height: 100vh; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; text-align: center; padding: 0 20px;
+        /* Hero Section */
+        .hero {
+            padding: 100px 20px 150px; text-align: center;
+            background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
         }
-        .profile-hex {
-            position: relative; width: 200px; height: 200px; margin-bottom: 40px;
-            padding: 8px; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        .profile-wrapper {
+            position: relative; width: 150px; height: 150px; margin: 0 auto 30px;
+        }
+        .profile-img {
+            width: 100%; height: 100%; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            border: 3px solid var(--accent-blue); object-fit: cover;
             animation: morph 8s ease-in-out infinite;
         }
         @keyframes morph {
-            0%, 100% { border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%; }
-            50% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
-        }
-        .profile-img { 
-            width: 100%; height: 100%; border-radius: inherit; 
-            object-fit: cover; border: 4px solid var(--bg-base); 
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
         }
 
-        h1 { font-size: 4rem; font-weight: 800; color: var(--text-heading); margin-bottom: 15px; letter-spacing: -2px; }
-        .typing { font-family: 'JetBrains Mono', monospace; color: var(--accent-primary); font-size: 1.1rem; }
+        h1 { font-size: 3rem; color: var(--text-primary); font-weight: 800; letter-spacing: -1px; }
+        .hero-tag { font-family: 'JetBrains Mono', monospace; color: var(--accent-blue); font-size: 0.9rem; margin-top: 10px; }
 
-        /* --- Section Styling --- */
-        .section-container { max-width: 1200px; margin: auto; padding: 120px 24px; }
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 32px; }
-
-        .glass-card {
-            background: var(--bg-surface); backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border); border-radius: 32px;
-            padding: 48px; position: relative; overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        /* Tabs System */
+        .tab-container { max-width: 1100px; margin: -60px auto 50px; padding: 0 20px; }
+        .tab-buttons { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; }
+        .tab-btn {
+            padding: 12px 25px; border-radius: 100px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-secondary); cursor: pointer;
+            font-weight: 600; transition: 0.3s;
         }
-        .glass-card:hover { transform: translateY(-12px); border-color: var(--accent-primary); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .tab-btn.active { background: var(--accent-blue); color: white; border-color: var(--accent-blue); }
 
-        /* --- Article Typography --- */
-        .category-pill { 
-            font-size: 0.65rem; font-weight: 700; text-transform: uppercase; 
-            letter-spacing: 1.5px; color: var(--accent-primary); 
-            background: rgba(56, 189, 248, 0.1); padding: 6px 14px; border-radius: 100px;
-        }
-        .card-title { font-size: 1.6rem; color: var(--text-heading); margin: 20px 0 15px; font-weight: 700; }
-        .read-btn { 
-            display: flex; align-items: center; gap: 10px; background: none; border: none; 
-            color: var(--accent-primary); cursor: pointer; font-weight: 600; margin-top: 25px; transition: 0.3s;
-        }
-        .read-btn:hover { gap: 15px; color: white; }
+        .tab-content { display: none; animation: fadeIn 0.5s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- Modal System --- */
+        /* Bento Cards */
+        .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; }
+        .card { 
+            background: var(--bg-card); border: 1px solid var(--border); 
+            border-radius: 24px; padding: 30px; transition: 0.3s;
+        }
+        .card:hover { border-color: var(--accent-blue); background: #1e293b; }
+
+        .span-8 { grid-column: span 8; }
+        .span-4 { grid-column: span 4; }
+        .span-12 { grid-column: span 12; }
+
+        h2 { color: var(--text-primary); font-size: 1.5rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        h2 i { color: var(--accent-blue); }
+
+        /* Article Cards */
+        .article-box {
+            padding: 20px; border-radius: 15px; background: rgba(255,255,255,0.03);
+            margin-bottom: 15px; border-left: 4px solid var(--accent-blue);
+        }
+        .article-box h3 { color: var(--text-primary); font-size: 1.1rem; margin-bottom: 5px; }
+        .read-link { color: var(--accent-blue); text-decoration: none; font-weight: 600; font-size: 0.9rem; cursor: pointer; }
+
+        /* Contact Items */
+        .contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: var(--text-secondary); text-decoration: none; }
+        .contact-item i { width: 30px; color: var(--accent-blue); }
+
+        /* Modal */
         .modal {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(2, 6, 23, 0.95); z-index: 9999; backdrop-filter: blur(15px);
+            background: rgba(2, 6, 23, 0.98); z-index: 2000; backdrop-filter: blur(10px);
+            overflow-y: auto; padding: 50px 20px;
         }
-        .modal-inner {
-            max-width: 800px; margin: 5vh auto; background: #0f172a; border-radius: 40px;
-            padding: 60px; border: 1px solid var(--glass-border); max-height: 90vh; overflow-y: auto;
-            position: relative;
-        }
-        .close-modal { position: absolute; top: 30px; right: 30px; font-size: 2rem; color: var(--text-heading); cursor: pointer; }
-        .modal-body h2 { color: var(--accent-primary); font-size: 2.2rem; margin-bottom: 25px; }
-        .modal-body p { margin-bottom: 20px; font-size: 1.1rem; line-height: 1.9; }
+        .modal-inner { max-width: 800px; margin: 0 auto; background: var(--bg-card); padding: 40px; border-radius: 30px; border: 1px solid var(--border); }
+        .close-modal { float: right; font-size: 2rem; color: white; cursor: pointer; }
 
-        /* --- Footer --- */
-        footer { padding: 100px 24px; text-align: center; border-top: 1px solid var(--glass-border); }
-        .contact-pill {
-            display: inline-flex; align-items: center; gap: 12px;
-            padding: 12px 30px; border-radius: 100px; border: 1px solid var(--accent-primary);
-            color: var(--accent-primary); text-decoration: none; font-weight: 600; margin: 10px;
-        }
-        .contact-pill:hover { background: var(--accent-primary); color: #000; }
+        footer { text-align: center; padding: 50px; border-top: 1px solid var(--border); margin-top: 50px; }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            h1 { font-size: 2.8rem; }
-            .nav-logo { font-size: 1.3rem; }
-            .modal-inner { width: 95%; padding: 30px; }
+            .span-8, .span-4 { grid-column: span 12; }
+            h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -130,119 +130,155 @@
     <div class="ambient-glow"></div>
 
     <nav>
-        <div class="nav-logo">FBIN<span>.</span></div>
-        <a href="mailto:info@fahimofficial.com" class="contact-pill" style="padding: 8px 20px; font-size: 0.8rem;">INQUIRIES</a>
+        <div class="logo">FAHIM<span>.SYSTEMS</span></div>
+        <div style="display: flex; gap: 10px;">
+            <a href="tel:+8801317621550" class="tab-btn" style="padding: 8px 15px; font-size: 0.8rem;"><i class="fa-solid fa-phone"></i> CALL</a>
+        </div>
     </nav>
 
     <header class="hero">
-        <div class="profile-hex">
+        <div class="profile-wrapper">
             <img src="FB_IMG_17576597773337071-removebg-preview.png" alt="Fahim" class="profile-img">
         </div>
         <h1>Fahim Ahammad Mazumder</h1>
-        <p class="typing">_SEARCHING_FOR_VULNERABILITIES > ANALYZING_SYSTEMS</p>
-        <div style="margin-top: 40px; display: flex; gap: 15px;">
-            <a href="#about" class="contact-pill" style="background: var(--text-heading); border:none; color: var(--bg-base);">DISCOVER BIO</a>
-            <a href="https://wa.me/8801317621550" class="contact-pill">DIRECT CHAT</a>
-        </div>
+        <p class="hero-tag">STATUS: ENCRYPTED // MISSION: DIGITAL_SECURITY</p>
     </header>
 
-    <div class="section-container" id="about">
-        <h2 style="font-size: 3rem; color: var(--text-heading); margin-bottom: 40px; text-align: center;">Executive <span>Briefing</span></h2>
-        <div class="glass-card">
-            <p style="font-size: 1.3rem; color: var(--text-heading); font-weight: 300; line-height: 2;">
-                I am a technical strategist blending the analytical rigor of <span style="color:var(--accent-primary)">Cyber Security</span> with the creative precision of <span style="color:var(--accent-secondary)">Professional Article Writing</span>. With an academic foundation in CSE and over half a year of operational experience in Global Dropshipping & E-commerce, I bridge the gap between complex digital infrastructure and user-centric communication. My mission is to secure digital assets while crafting narratives that resonate in the modern information economy.
-            </p>
-            <div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 30px; font-size: 0.9rem; font-weight: 600;">
-                <span><i class="fa-solid fa-microchip"></i> CSE | CHATTOGRAM POLYTECHNIC</span>
-                <span><i class="fa-solid fa-shield-halved"></i> SECURITY RESEARCHER</span>
-                <span><i class="fa-solid fa-pen-nib"></i> CONTENT SPECIALIST</span>
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-btn active" onclick="switchTab(event, 'english')">English Version</button>
+            <button class="tab-btn" onclick="switchTab(event, 'bangla')">বাংলা ভার্সন</button>
+        </div>
+
+        <div id="english" class="tab-content active">
+            <div class="grid">
+                <div class="card span-8">
+                    <h2><i class="fa-solid fa-user-tie"></i> Professional Summary</h2>
+                    <p>I am a **Cyber Security Researcher** and **Professional Content Strategist**. With a background in CSE and 7+ months of experience in **Dropshipping**, I specialize in identifying digital vulnerabilities and crafting high-impact technical articles. I combine technical expertise with creative storytelling to make the web safer.</p>
+                    <div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px;">
+                        <span style="background: rgba(14, 165, 233, 0.1); color: var(--accent-blue); padding: 5px 15px; border-radius: 50px; font-size: 0.8rem;">📍 Chattogram, BD</span>
+                        <span style="background: rgba(16, 185, 129, 0.1); color: var(--accent-green); padding: 5px 15px; border-radius: 50px; font-size: 0.8rem;">🩸 Blood: AB+</span>
+                    </div>
+                </div>
+                <div class="card span-4">
+                    <h2><i class="fa-solid fa-link"></i> Connections</h2>
+                    <a href="mailto:info@fahimofficial.com" class="contact-item"><i class="fa-solid fa-envelope"></i> info@fahimofficial.com</a>
+                    <a href="https://www.fahimofficial.com" class="contact-item"><i class="fa-solid fa-globe"></i> fahimofficial.com</a>
+                    <a href="https://facebook.com/infofbinfaheem" class="contact-item"><i class="fa-brands fa-facebook"></i> FBin Faheem (BD)</a>
+                </div>
+                <div class="card span-12">
+                    <h2><i class="fa-solid fa-shield-halved"></i> Security Research Papers</h2>
+                    <div class="grid">
+                        <div class="span-4 article-box">
+                            <h3>🔍 Nmap Scanning Mastery</h3>
+                            <p>Deep dive into network reconnaissance and port analysis.</p>
+                            <span class="read-link" onclick="openModal('nmap_en')">Read Full Report →</span>
+                        </div>
+                        <div class="span-4 article-box">
+                            <h3>🛡️ Linux Server Hardening</h3>
+                            <p>Essential steps to secure your server against intrusions.</p>
+                            <span class="read-link" onclick="openModal('linux_en')">Read Full Report →</span>
+                        </div>
+                        <div class="span-4 article-box">
+                            <h3>💻 Ethical Hacking Path</h3>
+                            <p>How to start your career in professional cyber defense.</p>
+                            <span class="read-link" onclick="openModal('hacking_en')">Read Full Report →</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="bangla" class="tab-content">
+            <div class="grid">
+                <div class="card span-8">
+                    <h2><i class="fa-solid fa-user-tie"></i> প্রোফাইল সারসংক্ষেপ</h2>
+                    <p>আমি ফাহিম আহাম্মদ মজুমদার, একজন **সাইবার সিকিউরিটি রিসার্চার** এবং **প্রফেশনাল কন্টেন্ট রাইটার**। CSE ব্যাকগ্রাউন্ড এবং ৭ মাসের **ড্রপশিপিং** অভিজ্ঞতার সমন্বয়ে আমি ডিজিটাল নিরাপত্তা এবং ই-কমার্স সলিউশন নিয়ে কাজ করছি। আমার লক্ষ্য হলো প্রযুক্তিগত জ্ঞানকে সহজভাবে সবার কাছে পৌঁছে দেওয়া।</p>
+                    <div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px;">
+                        <span style="background: rgba(14, 165, 233, 0.1); color: var(--accent-blue); padding: 5px 15px; border-radius: 50px;">📍 চট্টগ্রাম, বাংলাদেশ</span>
+                        <span style="background: rgba(16, 185, 129, 0.1); color: var(--accent-green); padding: 5px 15px; border-radius: 50px;">🩸 রক্ত: AB+</span>
+                    </div>
+                </div>
+                <div class="card span-4">
+                    <h2><i class="fa-solid fa-link"></i> যোগাযোগ</h2>
+                    <a href="mailto:info@fahimofficial.com" class="contact-item">📧 info@fahimofficial.com</a>
+                    <a href="tel:+8801317621550" class="contact-item">📞 +৮৮ ০১৩১৭৬২১৫৫০</a>
+                    <a href="https://facebook.com/infofbinfaheem" class="contact-item">👥 ফেসবুক পেজ</a>
+                </div>
+                <div class="card span-12">
+                    <h2><i class="fa-solid fa-shield-halved"></i> সাইবার সিকিউরিটি আর্টিকেল</h2>
+                    <div class="grid">
+                        <div class="span-4 article-box">
+                            <h3>🔍 এনম্যাপ (Nmap) গাইড</h3>
+                            <p>নেটওয়ার্ক স্ক্যানিং এবং ভলনারেবিলিটি বের করার বিস্তারিত নিয়ম।</p>
+                            <span class="read-link" onclick="openModal('nmap_bn')">পুরো আর্টিকেল পড়ুন →</span>
+                        </div>
+                        <div class="span-4 article-box">
+                            <h3>🛡️ লিনাক্স সার্ভার সিকিউরিটি</h3>
+                            <p>আপনার সার্ভারকে হ্যাকারদের থেকে সুরক্ষিত রাখার সেরা উপায়।</p>
+                            <span class="read-link" onclick="openModal('linux_bn')">পুরো আর্টিকেল পড়ুন →</span>
+                        </div>
+                        <div class="span-4 article-box">
+                            <h3>💻 ইথিক্যাল হ্যাকিং ক্যারিয়ার</h3>
+                            <p>কিভাবে সাইবার সিকিউরিটি এক্সপার্ট হিসেবে নিজের যাত্রা শুরু করবেন।</p>
+                            <span class="read-link" onclick="openModal('hacking_bn')">পুরো আর্টিকেল পড়ুন →</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="section-container">
-        <h2 style="font-size: 2.5rem; color: var(--text-heading); margin-bottom: 60px;">Research & <span>Publications</span></h2>
-        <div class="grid-layout">
-            
-            <div class="glass-card">
-                <span class="category-pill">Network Surveillance</span>
-                <h3 class="card-title">Network Reconnaissance: Advanced Nmap Tactics</h3>
-                <p>An exploration into silent port scanning, service enumeration, and bypassing IDS/Firewall configurations for security auditing...</p>
-                <button class="read-btn" onclick="openMod('nmap')">EXAMINE ARTICLE <i class="fa-solid fa-chevron-right"></i></button>
-            </div>
-
-            <div class="glass-card">
-                <span class="category-pill">System Hardening</span>
-                <h3 class="card-title">Linux Kernel Security & Server Protection</h3>
-                <p>Comprehensive guide on securing Linux environments, managing root access, and hardening kernels against remote exploits...</p>
-                <button class="read-btn" onclick="openMod('linux')">EXAMINE ARTICLE <i class="fa-solid fa-chevron-right"></i></button>
-            </div>
-
-            <div class="glass-card">
-                <span class="category-pill">Digital Economy</span>
-                <h3 class="card-title">Securing The Dropshipping Infrastructure</h3>
-                <p>How modern E-commerce ventures can defend against SQL injections, payment fraud, and social engineering attacks...</p>
-                <button class="read-btn" onclick="openMod('dropship')">EXAMINE ARTICLE <i class="fa-solid fa-chevron-right"></i></button>
-            </div>
-
-            <div class="glass-card">
-                <span class="category-pill">Cyber Psychology</span>
-                <h3 class="card-title">The Psychology of Social Engineering</h3>
-                <p>Understanding why humans are the weakest link in security chains and how to write content that educates and protects...</p>
-                <button class="read-btn" onclick="openMod('psych')">EXAMINE ARTICLE <i class="fa-solid fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </div>
-
-    <div id="infoModal" class="modal">
+    <div id="postModal" class="modal">
         <div class="modal-inner">
-            <span class="close-modal" onclick="closeMod()">&times;</span>
-            <div id="modContent" class="modal-body"></div>
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="modalBody" style="margin-top: 40px; color: var(--text-primary); line-height: 2;">
+                </div>
         </div>
     </div>
 
     <footer>
-        <h2 style="color: white; font-size: 2.5rem; margin-bottom: 20px;">Ready for Collaboration?</h2>
-        <p style="margin-bottom: 40px;">Currently accepting high-priority projects in Cyber Security and Professional Content Strategy.</p>
-        <div>
-            <a href="https://facebook.com/infofbinfaheem" class="contact-pill"><i class="fa-brands fa-facebook-f"></i> FACEBOOK</a>
-            <a href="mailto:info@fahimofficial.com" class="contact-pill"><i class="fa-solid fa-envelope"></i> EMAIL US</a>
-        </div>
-        <p style="margin-top: 80px; opacity: 0.3; font-size: 0.8rem; letter-spacing: 2px;">&copy; 2025 FBIN INTERNATIONAL NETWORK | FAHIM AHAMMAD MAZUMDER</p>
+        <p>&copy; 2025 Fahim Ahammad Mazumder | All Rights Reserved</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.5;">Designed for Maximum Impact & Professionalism</p>
     </footer>
 
     <script>
-        const contentData = {
-            'nmap': `
-                <h2>Network Reconnaissance Tactics</h2>
-                <p>In the realm of Cyber Security, <b>Reconnaissance</b> is the most critical phase. My research focuses on using Nmap not just as a scanner, but as a diagnostic engine. By utilizing the <i>Nmap Scripting Engine (NSE)</i>, we can automate the detection of vulnerabilities such as Heartbleed or SMB exploits.</p>
-                <p><b>Core Focus:</b> TCP Connect scans, Stealth SYN scans, and Idle scans that allow for complete anonymity during network auditing. I emphasize the importance of timing templates to avoid triggering Intrusion Detection Systems (IDS).</p>
-            `,
-            'linux': `
-                <h2>Linux Hardening Framework</h2>
-                <p>Linux is the foundation of the web, yet its default configuration is often susceptible to privilege escalation. My professional stance on Linux security involves a <b>Zero-Trust Architecture</b>.</p>
-                <p>I specialize in configuring SSH keys for passwordless yet ultra-secure authentication, implementing <i>Fail2Ban</i> to prevent brute-force attacks, and utilizing <i>SELinux</i> or <i>AppArmor</i> to restrict process capabilities. Securing the kernel is the first step in protecting the cloud.</p>
-            `,
-            'dropship': `
-                <h2>The Secure E-commerce Ecosystem</h2>
-                <p>Having spent over 7 months in the Dropshipping sector, I identified a massive gap in security for small-scale entrepreneurs. Most online stores are vulnerable to <b>Cross-Site Scripting (XSS)</b> and data harvesting.</p>
-                <p>My strategy combines high-converting content with backend security. I help businesses secure their Shopify/WooCommerce API gateways and ensure that customer data remains encrypted at every touchpoint of the supply chain.</p>
-            `,
-            'psych': `
-                <h2>Human-Centric Security</h2>
-                <p>Technology can be patched; human psychology cannot. Social engineering remains the top entry point for hackers. In my writing, I break down complex concepts like <i>Phishing</i>, <i>Pretexting</i>, and <i>Baiting</i>.</p>
-                <p>By using professional storytelling, I transform dry security protocols into engaging narratives that stay with the reader, effectively turning a company’s employees into its strongest firewall.</p>
-            `
+        function switchTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        const data = {
+            'nmap_en': `<h2>Nmap Reconnaissance Mastery</h2><p>Nmap (Network Mapper) is the gold standard for security auditing. In my professional research, I focus on identifying open ports, running services, and OS fingerprinting. <br><br><b>Key Command:</b> <code>nmap -sV -p- [target]</code> - This allows for comprehensive version detection across all 65,535 ports. Understanding your network's surface is the first step in defense.</p>`,
+            
+            'nmap_bn': `<h2>এনম্যাপ (Nmap) এর মাধ্যমে নেটওয়ার্ক অডিটিং</h2><p>এনম্যাপ হলো সাইবার সিকিউরিটির সবচেয়ে গুরুত্বপূর্ণ টুল। এর মাধ্যমে আমরা জানতে পারি একটি সার্ভারে কোন কোন পোর্ট খোলা আছে এবং কি কি সার্ভিস চলছে। <br><br>একজন সিকিউরিটি এনালিস্ট হিসেবে আমি দেখাই কিভাবে হ্যাকাররা ঢোকার আগে আপনি আপনার সিস্টেমের দুর্বলতা খুঁজে বের করবেন। মনে রাখবেন, সিস্টেমের ম্যাপ জানা থাকলে আক্রমণ প্রতিহত করা সহজ হয়।</p>`,
+            
+            'linux_en': `<h2>Linux Server Hardening</h2><p>Securing a Linux server involves multiple layers. 1. SSH Hardening (Changing port 22, disabling root login). 2. Firewall configuration (UFW/IPTables). 3. Regular Kernel updates. <br><br>In my articles, I emphasize the "Principle of Least Privilege" to ensure no process has more access than it needs.</p>`,
+            
+            'linux_bn': `<h2>লিনাক্স সার্ভার সুরক্ষিত রাখার উপায়</h2><p>লিনাক্স সার্ভার সিকিউরিটি মানে শুধু একটি পাসওয়ার্ড নয়। এটি একটি মাল্টি-লেয়ার ডিফেন্স সিস্টেম। <br><br>১. এসএসএইচ (SSH) পোর্ট পরিবর্তন করা। ২. রুট লগইন বন্ধ রাখা। ৩. নিয়মিত ফায়ারওয়াল চেক করা। আমার গবেষণায় আমি দেখাই কিভাবে এই ধাপগুলো অনুসরণ করে আপনি একটি সার্ভারকে ৯৯% সুরক্ষিত করতে পারেন।</p>`,
+
+            'hacking_en': `<h2>Ethical Hacking Roadmap</h2><p>To become a professional ethical hacker, one must master: 1. Networking (TCP/IP). 2. Operating Systems (Linux/Windows). 3. Programming (Python/Bash). <br><br>Ethics is the most important part of hacking. My mission is to teach the community how to defend systems legally and professionally.</p>`,
+
+            'hacking_bn': `<h2>ইথিক্যাল হ্যাকিং ক্যারিয়ার গাইড</h2><p>ইথিক্যাল হ্যাকার হতে হলে আপনাকে শুধু কোডিং জানলে চলবে না, সিস্টেম কিভাবে কাজ করে তা বুঝতে হবে। <br><br>সবার আগে নেটওয়ার্কিং এবং লিনাক্স শিখুন। এরপর পাইথন প্রোগ্রামিং দিয়ে অটোমেশন শিখুন। মনে রাখবেন, হ্যাকিং একটি অস্ত্র, আর ইথিক্যাল হ্যাকিং হলো সেই অস্ত্র দিয়ে সিস্টেমকে রক্ষা করা।</p>`
         };
 
-        function openMod(id) {
-            document.getElementById('modContent').innerHTML = contentData[id];
-            document.getElementById('infoModal').style.display = "block";
+        function openModal(id) {
+            document.getElementById('modalBody').innerHTML = data[id];
+            document.getElementById('postModal').style.display = "block";
             document.body.style.overflow = "hidden";
         }
 
-        function closeMod() {
-            document.getElementById('infoModal').style.display = "none";
+        function closeModal() {
+            document.getElementById('postModal').style.display = "none";
             document.body.style.overflow = "auto";
         }
     </script>
