@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fahim Ahammad Mazumder | Elite Brand</title>
+    <title>Fahim Ahammad Mazumder | Elite Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
@@ -11,7 +11,6 @@
         :root {
             --neon-blue: #00d2ff;
             --verify-blue: #1DA1F2;
-            --glass: rgba(0, 0, 0, 0.7);
         }
 
         * {
@@ -21,7 +20,6 @@
         }
 
         body {
-            /* আপনার আপলোড করা ফাইল */
             background: url('ripped-paper-framed-black-background_53876-118700.jpg') no-repeat center center fixed;
             background-size: cover;
             color: white;
@@ -30,7 +28,7 @@
             overflow-x: hidden;
         }
 
-        /* ১. টপ মিনি বাটন (সিরিয়াল অনুযায়ী) */
+        /* 1. Top Serial Mini Buttons */
         .header-nav {
             position: fixed;
             top: 20px;
@@ -43,9 +41,9 @@
         }
 
         .mini-btn {
-            padding: 8px 15px;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(12px);
+            padding: 8px 16px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.2);
             border-radius: 50px;
             color: white;
@@ -54,7 +52,7 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: 0.3s ease;
+            transition: 0.3s;
         }
 
         .mini-btn:hover {
@@ -63,7 +61,7 @@
             transform: scale(1.1);
         }
 
-        /* ২. হিরো সেকশন এনিমেশন */
+        /* 2. Hero Section */
         .hero {
             height: 100vh;
             display: flex;
@@ -75,62 +73,60 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 10vw, 5.5rem);
+            font-size: clamp(2.5rem, 10vw, 6rem);
             font-weight: 900;
-            background: linear-gradient(to bottom, #fff, #777);
+            letter-spacing: -2px;
+            background: linear-gradient(to bottom, #fff, #666);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 25px;
-            filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+            margin-bottom: 30px;
         }
 
-        /* ৩. সেন্ট্রাল গ্লোয়িং বাটন */
-        .btn-container {
+        /* 3. Center Glowing Buttons */
+        .btn-group {
             display: flex;
             gap: 20px;
         }
 
         @media (max-width: 600px) {
-            .btn-container { flex-direction: column; width: 80%; }
+            .btn-group { flex-direction: column; width: 100%; align-items: center; }
         }
 
-        .main-glow-btn {
-            padding: 18px 35px;
+        .glow-btn {
+            padding: 18px 40px;
             font-size: 15px;
             font-weight: 900;
             color: white;
             text-decoration: none;
             background: #000;
-            border-radius: 15px;
+            border-radius: 12px;
             border: 1px solid #333;
-            text-align: center;
             transition: 0.4s;
-            position: relative;
-            overflow: hidden;
+            text-align: center;
+            min-width: 200px;
         }
 
-        .main-glow-btn:hover {
+        .glow-btn:hover {
+            box-shadow: 0 0 25px var(--neon-blue);
             border-color: var(--neon-blue);
-            box-shadow: 0 0 30px rgba(0, 210, 255, 0.4);
             transform: translateY(-5px);
         }
 
-        /* ৪. এবাউট সেকশন (Verified Profile) */
+        /* 4. Verified Profile Card */
         .profile-card {
-            background: var(--glass);
+            background: rgba(0, 0, 0, 0.75);
             backdrop-filter: blur(20px);
             padding: 50px 30px;
-            border-radius: 40px;
+            border-radius: 35px;
             border: 1px solid rgba(255,255,255,0.1);
             max-width: 90%;
             width: 550px;
             margin: 100px auto;
             text-align: center;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
 
         .verified-name {
-            font-size: clamp(1.5rem, 6vw, 2.2rem);
+            font-size: clamp(1.4rem, 6vw, 2rem);
             font-weight: 800;
             display: flex;
             justify-content: center;
@@ -138,7 +134,7 @@
             gap: 10px;
         }
 
-        .verify-tick { color: var(--verify-blue); }
+        .verify-badge { color: var(--verify-blue); }
 
         .social-links {
             margin-top: 30px;
@@ -150,42 +146,45 @@
 
         .social-links a {
             color: white;
-            font-size: 35px;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 32px;
+            transition: 0.4s;
         }
 
         .social-links a:hover {
             color: var(--neon-blue);
-            transform: translateY(-10px) rotate(360deg);
+            transform: translateY(-8px);
         }
 
-        /* ৫. সার্ভিস সেকশন */
-        .service-box {
+        /* 5. Services Grid */
+        .services-grid {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
-            padding: 50px 20px;
+            gap: 25px;
+            flex-wrap: wrap;
+            padding: 80px 20px;
         }
 
         .card {
             background: rgba(255,255,255,0.05);
-            padding: 30px;
-            border-radius: 20px;
+            padding: 40px;
+            border-radius: 25px;
             width: 320px;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid #222;
             transition: 0.3s;
         }
 
-        .card:hover { border-color: var(--neon-blue); background: rgba(255,255,255,0.1); }
+        .card:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--neon-blue);
+        }
 
-        /* ফুটার */
+        /* Footer */
         footer {
-            padding: 50px;
+            background: #000;
+            padding: 60px 20px;
             text-align: center;
-            background: rgba(0,0,0,0.9);
-            border-top: 1px solid #222;
+            border-top: 1px solid #111;
         }
     </style>
 </head>
@@ -199,20 +198,20 @@
         <a href="#contact" class="mini-btn">Contact</a>
     </nav>
 
-    <header class="hero">
+    <section class="hero">
         <h1>FAHIM OFFICIAL</h1>
-        <div class="btn-container">
-            <a href="https://sites.google.com/view/fbindeals" target="_blank" class="main-glow-btn">VISIT SHOP</a>
-            <a href="https://www.fahimofficial.com" target="_blank" class="main-glow-btn">OUR SERVICES</a>
+        <div class="btn-group">
+            <a href="https://sites.google.com/view/fbindeals" target="_blank" class="glow-btn">VISIT SHOP</a>
+            <a href="https://www.fahimofficial.com/Portfolio/" target="_blank" class="glow-btn">OUR SERVICES</a>
         </div>
-    </header>
+    </section>
 
     <section id="about">
         <div class="profile-card">
             <div class="verified-name">
-                Fahim Ahammad Mazumder <i class="fas fa-check-circle verify-tick"></i>
+                Fahim Ahammad Mazumder <i class="fas fa-check-circle verify-badge"></i>
             </div>
-            <p style="color: #aaa; margin-top: 15px; letter-spacing: 2px;">Digital Content & E-commerce Expert</p>
+            <p style="color: #666; margin-top: 10px; letter-spacing: 2px; text-transform: uppercase; font-size: 12px;">Digital Strategist & Entrepreneur</p>
             
             <div class="social-links">
                 <a href="https://facebook.com/fahimofficial.com.bd" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -221,46 +220,43 @@
                 <a href="https://wa.me/8801317621550" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
             <br><br>
-            <a href="https://www.fahimofficial.com/Portfolio/" target="_blank" style="color: var(--neon-blue); text-decoration: none; font-weight: bold; border-bottom: 1px solid;">Go To Official Portfolio</a>
+            <a href="https://www.fahimofficial.com/Portfolio/" target="_blank" style="color: var(--neon-blue); text-decoration: none; font-weight: bold; font-size: 14px; border-bottom: 1px solid;">Visit Portfolio Link</a>
         </div>
     </section>
 
     <section id="shop" style="text-align: center; padding: 100px 20px;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">FBin DEALS •BD• <i class="fas fa-check-circle verify-tick"></i></h2>
-        <a href="https://facebook.com/fbindeals" target="_blank" class="main-glow-btn">VISIT FACEBOOK SHOP</a>
+        <h2 style="font-size: 2.5rem; margin-bottom: 25px;">FBin DEALS •BD• <i class="fas fa-check-circle verify-badge"></i></h2>
+        <a href="https://facebook.com/fbindeals" target="_blank" class="glow-btn">OPEN FACEBOOK SHOP</a>
     </section>
 
-    <section id="services" style="text-align: center; padding: 50px 0;">
-        <h2 style="letter-spacing: 5px;">OUR SERVICES</h2>
-        <div class="service-box">
-            <div class="card">
-                <i class="fas fa-feather-alt fa-3x" style="color: var(--neon-blue);"></i>
-                <h3 style="margin: 15px 0;">Article Writer</h3>
-                <p>এসইও ফ্রেন্ডলি কন্টেন্ট এবং আর্টিকেল রাইটিং সলিউশন।</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-store-alt fa-3x" style="color: var(--neon-blue);"></i>
-                <h3 style="margin: 15px 0;">E-commerce Solutions</h3>
-                <p>অনলাইন বিজনেস সেটআপ এবং গ্রোথ মার্কেটিং।</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-tasks fa-3x" style="color: var(--neon-blue);"></i>
-                <h3 style="margin: 15px 0;">Blog Management</h3>
-                <p>প্রফেশনাল ব্লগ অ্যাডমিন এবং ম্যানেজমেন্ট সার্ভিস।</p>
-            </div>
+    <section id="services" class="services-grid">
+        <div class="card">
+            <i class="fas fa-pen-nib fa-3x" style="color: var(--neon-blue);"></i>
+            <h3 style="margin: 20px 0;">Article Writer</h3>
+            <p style="color: #999;">Professional SEO content creation for digital platforms.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-shopping-cart fa-3x" style="color: var(--neon-blue);"></i>
+            <h3 style="margin: 20px 0;">E-commerce Solutions</h3>
+            <p style="color: #999;">Full-scale business solutions and online shop management.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-laptop-code fa-3x" style="color: var(--neon-blue);"></i>
+            <h3 style="margin: 20px 0;">Blog Management</h3>
+            <p style="color: #999;">End-to-end administration and blogging strategy.</p>
         </div>
     </section>
 
     <footer id="contact">
-        <h3>GET IN TOUCH</h3><br>
-        <p><i class="fas fa-envelope"></i> info@fahimofficial.com</p>
-        <p><i class="fas fa-envelope"></i> fbindeals@gmail.com</p>
-        <p><i class="fas fa-map-marker-alt"></i> Chattogram, Bangladesh</p>
-        <div class="social-links" style="margin-top: 20px;">
+        <h2 style="margin-bottom: 30px; letter-spacing: 4px;">CONTACT</h2>
+        <p style="color: #888; margin-bottom: 10px;"><i class="fas fa-envelope"></i> info@fahimofficial.com</p>
+        <p style="color: #888; margin-bottom: 10px;"><i class="fas fa-envelope"></i> fbindeals@gmail.com</p>
+        <p style="color: #888; margin-bottom: 30px;"><i class="fas fa-map-marker-alt"></i> Chattogram, Bangladesh</p>
+        <div class="social-links">
             <a href="https://wa.me/8801317621550" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://facebook.com/fbindeals" target="_blank"><i class="fas fa-shopping-cart"></i></a>
+            <a href="https://facebook.com/fbindeals" target="_blank"><i class="fas fa-shopping-bag"></i></a>
         </div>
-        <p style="margin-top: 40px; opacity: 0.3; font-size: 12px;">© 2026 Fahim Official | All Rights Reserved</p>
+        <p style="margin-top: 50px; font-size: 11px; opacity: 0.4;">© 2026 FAHIM OFFICIAL. ALL RIGHTS RESERVED.</p>
     </footer>
 
 </body>
