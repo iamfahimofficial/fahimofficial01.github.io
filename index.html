@@ -1,157 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fahim Ahammad Mazumder | Designer Portfolio</title>
+    <title>Fahim Ahammad Mazumder | Elite Brand</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --neon-blue: #00d2ff;
-            --verify-blue: #1DA1F2;
+            --accent: #00d2ff;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background: #050505;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('ripped-paper-framed-black-background_53876-118700.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            font-family: 'Montserrat', sans-serif;
+            background: #000;
+            color: #fff;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        /* Hero Text */
-        .hero-title {
-            text-align: center;
-            padding: 50px 20px 20px 20px;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(3rem, 12vw, 5rem);
-            letter-spacing: 5px;
-            background: linear-gradient(to bottom, #fff, #444);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Profile Card */
-        .profile-card {
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(25px);
-            padding: 80px 25px 40px 25px;
-            border-radius: 40px;
-            border: 1px solid rgba(255,255,255,0.1);
-            max-width: 90%;
-            width: 450px;
-            margin: 60px auto 100px auto;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
-        }
-
-        /* Logo at Top */
-        .card-logo {
-            width: 125px;
-            height: 125px;
-            margin: -145px auto 25px auto;
-            border-radius: 50%;
-            border: 4px solid #fff;
-            padding: 5px;
-            background: linear-gradient(45deg, #00d2ff, #92fe9d);
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.5);
-        }
-
-        .card-logo img {
+        /* 1. Full-Screen Cover Section */
+        .cover-wrapper {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .verified-name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 900;
+            height: 45vh;
+            background: url('FB_IMG_17694202292651222.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 8px;
+            align-items: flex-end;
         }
 
-        .verify-badge { color: var(--verify-blue); font-size: 0.8em; }
-
-        .tagline {
-            color: #777;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-size: 10px;
-            font-weight: 700;
-            margin: 10px 0 35px 0;
+        .cover-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(transparent, #000);
         }
 
-        /* Button Stack with Individual Colors */
-        .btn-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
+        /* 2. Profile Image & Card */
+        .main-container {
+            max-width: 500px;
+            margin: -80px auto 50px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .profile-container {
+            text-align: center;
             margin-bottom: 40px;
         }
 
-        .designer-btn {
-            padding: 18px;
-            font-size: 13px;
-            font-weight: 900;
-            color: white;
-            text-decoration: none;
-            border-radius: 15px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: none;
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(45deg, #00d2ff, #9d50bb);
+            margin: 0 auto 20px auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #000;
+        }
+
+        .profile-pic::after {
+            content: '';
+            position: absolute;
+            top: -10px; left: -10px; right: -10px; bottom: -10px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.1);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+
+        .name-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             gap: 10px;
         }
 
-        /* Individual Button Colors */
-        .btn-portfolio { background: linear-gradient(45deg, #FF512F, #DD2476); box-shadow: 0 4px 15px rgba(221, 36, 118, 0.3); }
-        .btn-bd-shop { background: linear-gradient(45deg, #1D976C, #93F9B9); color: #000; box-shadow: 0 4px 15px rgba(29, 151, 108, 0.3); }
-        .btn-global-shop { background: linear-gradient(45deg, #00d2ff, #3a7bd5); box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3); }
-        .btn-blog { background: #222; color: #555; cursor: not-allowed; opacity: 0.7; }
+        .verify-badge { color: #1DA1F2; font-size: 0.6em; }
 
-        .designer-btn:hover:not(.btn-blog) {
-            transform: translateY(-5px) scale(1.02);
-            filter: brightness(1.1);
-            box-shadow: 0 10px 25px rgba(255,255,255,0.2);
+        .bio-tag {
+            color: #888;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-top: 5px;
         }
 
-        /* Bright & Colorful Social Links */
-        .social-bar {
+        /* 3. Button Stack - Custom Designer Style */
+        .stack-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 40px 0;
+        }
+
+        .premium-link {
+            padding: 22px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Unique Button Colors */
+        .link-portfolio { background: linear-gradient(90deg, #614385, #516395); }
+        .link-bd { background: linear-gradient(90deg, #1D976C, #93F9B9); color: #000; }
+        .link-global { background: linear-gradient(90deg, #2c3e50, #000000); }
+        .link-blog { 
+            background: rgba(255,255,255,0.02); 
+            color: #444; 
+            cursor: not-allowed; 
+            border: 1px dashed #333;
+        }
+
+        .premium-link:hover:not(.link-blog) {
+            transform: scale(1.03) translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        /* 4. Bright Social Hub */
+        .social-hub {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 50px;
+        }
+
+        .social-box {
+            height: 60px;
+            background: var(--glass);
+            border-radius: 15px;
             display: flex;
             justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .social-bar a {
-            font-size: 24px;
+            align-items: center;
+            font-size: 22px;
             transition: 0.3s;
-            filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
+            border: 1px solid var(--border);
         }
 
-        .social-bar a:hover { transform: scale(1.3) translateY(-5px); }
+        .social-box:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
 
-        /* Icon Colors */
+        /* Brand Colors */
         .fa-facebook { color: #1877F2; }
-        .fa-instagram { color: #E4405F; }
+        .fa-instagram { color: #FF0077; }
         .fa-linkedin { color: #0A66C2; }
         .fa-whatsapp { color: #25D366; }
         .fa-youtube { color: #FF0000; }
@@ -159,100 +189,114 @@
         .fa-github { color: #fff; }
         .fa-x-twitter { color: #fff; }
 
-        /* Services */
-        .services-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            padding: 50px 20px;
+        /* 5. Services - Grid Section */
+        .section-label {
+            font-family: 'Syne', sans-serif;
+            font-size: 14px;
+            color: var(--accent);
+            text-align: center;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
         }
 
-        .s-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid #222;
+        .service-tile {
+            background: var(--glass);
             padding: 30px;
             border-radius: 25px;
-            width: 300px;
-            text-align: center;
+            border: 1px solid var(--border);
+            margin-bottom: 15px;
         }
 
-        .s-card i { font-size: 40px; margin-bottom: 20px; background: linear-gradient(45deg, #00d2ff, #92fe9d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .service-tile h3 { font-size: 16px; margin-bottom: 10px; }
+        .service-tile p { font-size: 13px; color: #777; }
 
         /* Footer */
         footer {
-            background: #000;
+            margin-top: 50px;
             padding: 60px 20px;
+            background: #050505;
             text-align: center;
-            border-top: 1px solid #111;
+            border-top: 1px solid var(--border);
         }
 
-        .contact-text { color: #888; text-decoration: none; display: block; margin-bottom: 10px; font-size: 14px; }
+        .contact-pill {
+            display: block;
+            margin-bottom: 15px;
+            color: #999;
+            text-decoration: none;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
 
-    <h1 class="hero-title">FAHIM OFFICIAL</h1>
+    <div class="cover-wrapper">
+        <div class="cover-overlay"></div>
+    </div>
 
-    <section id="about">
-        <div class="profile-card">
-            <div class="card-logo">
-                <img src="FB_IMG_17576597773337071-removebg-preview.png" alt="Fahim Logo">
+    <div class="main-container">
+        <div class="profile-container">
+            <div class="profile-pic">
+                <img src="FB_IMG_17576597773337071-removebg-preview.png" alt="Fahim Profile">
             </div>
-
-            <div class="verified-name">
+            <h1 class="name-title">
                 Fahim Ahammad Mazumder <i class="fas fa-check-circle verify-badge"></i>
-            </div>
-            <p class="tagline">Digital Strategist & Entrepreneur</p>
-            
-            <div class="btn-stack">
-                <a href="https://iamfahimofficial.github.io/Portfolio/" target="_blank" class="designer-btn btn-portfolio">
-                    <i class="fas fa-user-tie"></i> Official Portfolio
-                </a>
-                <a href="https://sites.google.com/view/fbindeals" target="_blank" class="designer-btn btn-bd-shop">
-                    <i class="fas fa-shopping-cart"></i> BD Local Shop
-                </a>
-                <a href="https://www.fahix.com" target="_blank" class="designer-btn btn-global-shop">
-                    <i class="fas fa-globe"></i> Global Digital Shop
-                </a>
-                <a href="javascript:void(0)" class="designer-btn btn-blog">
-                    <i class="fas fa-blog"></i> Expert Blog (Soon)
-                </a>
-            </div>
+            </h1>
+            <p class="bio-tag">Digital Strategist & Entrepreneur</p>
+        </div>
 
-            <div class="social-bar">
-                <a href="https://facebook.com/iamfahimofficial" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://Instagram.com/iamfahimofficial" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://linkedin.com/in/iamfahimofficial-" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/8801317621550" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://youtube.com/@iamfahimofficial" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://tiktok.com/@iamfahimofficiall" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://github.com/iamfahimofficial" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://x.com/xfahimofficial" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <div class="stack-container">
+            <a href="https://iamfahimofficial.github.io/Portfolio/" target="_blank" class="premium-link link-portfolio">
+                <span>Official Portfolio</span>
+                <i class="fas fa-arrow-right-long"></i>
+            </a>
+
+            <a href="https://sites.google.com/view/fbindeals" target="_blank" class="premium-link link-bd">
+                <span>BD Local Shop</span>
+                <i class="fas fa-bag-shopping"></i>
+            </a>
+
+            <a href="https://www.amazon.com" target="_blank" class="premium-link link-global">
+                <span>Global Digital Shop</span>
+                <i class="fas fa-globe"></i>
+            </a>
+
+            <div class="premium-link link-blog">
+                <span>Expert Blog (Disabled)</span>
+                <i class="fas fa-lock"></i>
             </div>
         </div>
-    </section>
 
-    <div class="services-container">
-        <div class="s-card">
-            <i class="fas fa-pen-nib"></i>
-            <h3 style="font-family: 'Bebas Neue'; font-size: 24px; letter-spacing: 2px;">Article Writer</h3>
-            <p style="font-size: 12px; color: #666; margin-top: 10px;">Professional SEO content creation.</p>
+        <div class="social-hub">
+            <a href="https://facebook.com/iamfahimofficial" target="_blank" class="social-box"><i class="fab fa-facebook"></i></a>
+            <a href="https://Instagram.com/iamfahimofficial" target="_blank" class="social-box"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/iamfahimofficial-" target="_blank" class="social-box"><i class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/8801317621550" target="_blank" class="social-box"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://youtube.com/@iamfahimofficial" target="_blank" class="social-box"><i class="fab fa-youtube"></i></a>
+            <a href="https://tiktok.com/@iamfahimofficiall" target="_blank" class="social-box"><i class="fab fa-tiktok"></i></a>
+            <a href="https://github.com/iamfahimofficial" target="_blank" class="social-box"><i class="fab fa-github"></i></a>
+            <a href="https://x.com/xfahimofficial" target="_blank" class="social-box"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
-        <div class="s-card">
-            <i class="fas fa-store"></i>
-            <h3 style="font-family: 'Bebas Neue'; font-size: 24px; letter-spacing: 2px;">E-commerce</h3>
-            <p style="font-size: 12px; color: #666; margin-top: 10px;">End-to-end business solutions.</p>
+
+        <h2 class="section-label">Expertise</h2>
+        <div class="service-tile">
+            <h3><i class="fas fa-pen-nib" style="color:var(--accent)"></i> Article Writing</h3>
+            <p>Premium SEO-optimized content creation for global digital landscapes.</p>
+        </div>
+        <div class="service-tile">
+            <h3><i class="fas fa-store" style="color:var(--accent)"></i> E-commerce Solutions</h3>
+            <p>Scaling businesses through expert management and digital shop setup.</p>
         </div>
     </div>
 
     <footer>
-        <h2 style="font-family: 'Bebas Neue'; letter-spacing: 4px; margin-bottom: 20px;">CONTACT</h2>
-        <a href="mailto:me@fahimofficial.com" class="contact-text"><i class="fas fa-envelope"></i> me@fahimofficial.com</a>
-        <a href="mailto:support@fahix.com" class="contact-text"><i class="fas fa-envelope"></i> support@fahix.com</a>
-        <p class="contact-text"><i class="fas fa-map-marker-alt"></i> Chattogram, Bangladesh</p>
-        <p style="margin-top: 40px; font-size: 10px; opacity: 0.3; letter-spacing: 2px;">© 2026 FAHIM OFFICIAL. ALL RIGHTS RESERVED.</p>
+        <h2 class="section-label" style="color: white;">Contact</h2>
+        <a href="mailto:me@fahimofficial.com" class="contact-pill"><i class="fas fa-envelope"></i> me@fahimofficial.com</a>
+        <a href="mailto:support@fahix.com" class="contact-pill"><i class="fas fa-envelope"></i> support@fahix.com</a>
+        <p class="contact-pill"><i class="fas fa-location-dot"></i> Chattogram, Bangladesh</p>
+        <p style="margin-top: 40px; font-size: 10px; color: #444; letter-spacing: 2px;">© 2026 FAHIM OFFICIAL. ALL RIGHTS RESERVED.</p>
     </footer>
 
 </body>
-        </html>
+    </html>
