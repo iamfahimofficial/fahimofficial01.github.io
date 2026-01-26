@@ -1,302 +1,216 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fahim Ahammad Mazumder | Elite Brand</title>
+    <title>Fahim Ahammad Mazumder | Official Profile</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --accent: #00d2ff;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.1);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Roboto', sans-serif;
         }
 
         body {
-            background: #000;
-            color: #fff;
-            overflow-x: hidden;
-            line-height: 1.6;
+            background-color: #050505;
+            color: #e4e6eb;
         }
 
-        /* 1. Full-Screen Cover Section */
-        .cover-wrapper {
-            width: 100%;
-            height: 45vh;
-            background: url('FB_IMG_17694202292651222.jpg') no-repeat center center;
-            background-size: cover;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-        }
-
-        .cover-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(transparent, #000);
-        }
-
-        /* 2. Profile Image & Card */
-        .main-container {
-            max-width: 500px;
-            margin: -80px auto 50px auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 10;
-        }
-
+        /* Profile Container */
         .profile-container {
-            text-align: center;
-            margin-bottom: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            background: #18191a;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
 
-        .profile-pic {
+        /* 1. Facebook Style Cover Photo */
+        .cover-area {
+            width: 100%;
+            height: 220px;
+            background-image: url('FB_IMG_17694202292651222.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            border-bottom: 1px solid #333;
+        }
+
+        /* 2. Overlapping Profile Picture */
+        .profile-pic-wrapper {
             width: 160px;
             height: 160px;
-            border-radius: 50%;
-            padding: 5px;
-            background: linear-gradient(45deg, #00d2ff, #9d50bb);
-            margin: 0 auto 20px auto;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            margin-top: -80px; /* অর্ধেক উপরে উঠিয়ে দেওয়া */
+            margin-left: auto;
+            margin-right: auto;
             position: relative;
+            z-index: 5;
         }
 
-        .profile-pic img {
+        .profile-pic-wrapper img {
             width: 100%;
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #000;
+            border: 4px solid #18191a;
+            background: #000;
         }
 
-        .profile-pic::after {
-            content: '';
-            position: absolute;
-            top: -10px; left: -10px; right: -10px; bottom: -10px;
-            border-radius: 50%;
-            border: 1px solid rgba(255,255,255,0.1);
-            animation: rotate 10s linear infinite;
+        /* Identity Section */
+        .user-info {
+            text-align: center;
+            padding: 15px 20px;
+            border-bottom: 1px solid #3e4042;
         }
 
-        @keyframes rotate { 100% { transform: rotate(360deg); } }
-
-        .name-title {
-            font-family: 'Syne', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 800;
-            letter-spacing: -1px;
+        .user-info h1 {
+            font-size: 26px;
+            font-weight: 700;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
-        .verify-badge { color: #1DA1F2; font-size: 0.6em; }
+        .verify-icon {
+            color: #2D88FF;
+            font-size: 20px;
+        }
 
-        .bio-tag {
-            color: #888;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 4px;
+        .user-info p {
+            color: #b0b3b8;
             margin-top: 5px;
+            font-size: 15px;
         }
 
-        /* 3. Button Stack - Custom Designer Style */
-        .stack-container {
+        /* 3. Designer Action Buttons */
+        .action-buttons {
+            padding: 20px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            margin: 40px 0;
+            gap: 12px;
         }
 
-        .premium-link {
-            padding: 22px;
-            border-radius: 20px;
-            text-decoration: none;
-            color: white;
-            font-weight: 700;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .fb-btn {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid var(--border);
-            overflow: hidden;
-            position: relative;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: 0.2s;
+            border: none;
         }
 
-        /* Unique Button Colors */
-        .link-portfolio { background: linear-gradient(90deg, #614385, #516395); }
-        .link-bd { background: linear-gradient(90deg, #1D976C, #93F9B9); color: #000; }
-        .link-global { background: linear-gradient(90deg, #2c3e50, #000000); }
-        .link-blog { 
-            background: rgba(255,255,255,0.02); 
-            color: #444; 
-            cursor: not-allowed; 
-            border: 1px dashed #333;
-        }
+        /* Premium Colors for Buttons */
+        .btn-portfolio { background-color: #2D88FF; color: white; } /* Blue */
+        .btn-bd-shop { background-color: #31A24C; color: white; } /* Green */
+        .btn-global { background-color: #E4E6EB; color: #050505; } /* Light Grey */
+        .btn-blog { background-color: #3a3b3c; color: #777; cursor: not-allowed; } /* Dark */
 
-        .premium-link:hover:not(.link-blog) {
-            transform: scale(1.03) translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-            border-color: rgba(255,255,255,0.3);
-        }
+        .fb-btn:hover { opacity: 0.9; transform: scale(0.99); }
 
-        /* 4. Bright Social Hub */
-        .social-hub {
+        /* 4. Social Links Grid (Bright Colors) */
+        .social-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin-bottom: 50px;
+            gap: 15px;
+            padding: 10px 20px 30px;
         }
 
-        .social-box {
-            height: 60px;
-            background: var(--glass);
-            border-radius: 15px;
+        .social-item {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            font-size: 22px;
+            text-decoration: none;
+            color: #b0b3b8;
+            font-size: 24px;
             transition: 0.3s;
-            border: 1px solid var(--border);
         }
 
-        .social-box:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.08);
-        }
+        .social-item:hover { transform: translateY(-3px); }
 
-        /* Brand Colors */
+        /* Brand Colors for Icons */
         .fa-facebook { color: #1877F2; }
-        .fa-instagram { color: #FF0077; }
+        .fa-instagram { color: #E4405F; }
         .fa-linkedin { color: #0A66C2; }
         .fa-whatsapp { color: #25D366; }
         .fa-youtube { color: #FF0000; }
         .fa-tiktok { color: #00f2ea; }
-        .fa-github { color: #fff; }
-        .fa-x-twitter { color: #fff; }
+        .fa-github { color: #ffffff; }
+        .fa-x-twitter { color: #ffffff; }
 
-        /* 5. Services - Grid Section */
-        .section-label {
-            font-family: 'Syne', sans-serif;
-            font-size: 14px;
-            color: var(--accent);
+        /* Section Labels */
+        .section-title {
+            padding: 15px 20px 5px;
+            font-size: 17px;
+            font-weight: 700;
+            color: #e4e6eb;
+        }
+
+        .footer {
             text-align: center;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-        }
-
-        .service-tile {
-            background: var(--glass);
-            padding: 30px;
-            border-radius: 25px;
-            border: 1px solid var(--border);
-            margin-bottom: 15px;
-        }
-
-        .service-tile h3 { font-size: 16px; margin-bottom: 10px; }
-        .service-tile p { font-size: 13px; color: #777; }
-
-        /* Footer */
-        footer {
-            margin-top: 50px;
-            padding: 60px 20px;
-            background: #050505;
-            text-align: center;
-            border-top: 1px solid var(--border);
-        }
-
-        .contact-pill {
-            display: block;
-            margin-bottom: 15px;
-            color: #999;
-            text-decoration: none;
-            font-size: 14px;
+            padding: 40px 20px;
+            color: #b0b3b8;
+            font-size: 13px;
         }
     </style>
 </head>
 <body>
 
-    <div class="cover-wrapper">
-        <div class="cover-overlay"></div>
-    </div>
+    <div class="profile-container">
+        <div class="cover-area"></div>
 
-    <div class="main-container">
-        <div class="profile-container">
-            <div class="profile-pic">
-                <img src="FB_IMG_17576597773337071-removebg-preview.png" alt="Fahim Profile">
-            </div>
-            <h1 class="name-title">
-                Fahim Ahammad Mazumder <i class="fas fa-check-circle verify-badge"></i>
-            </h1>
-            <p class="bio-tag">Digital Strategist & Entrepreneur</p>
+        <div class="profile-pic-wrapper">
+            <img src="FB_IMG_175765977773337071-removebg-preview.png" alt="Fahim Logo">
         </div>
 
-        <div class="stack-container">
-            <a href="https://iamfahimofficial.github.io/Portfolio/" target="_blank" class="premium-link link-portfolio">
-                <span>Official Portfolio</span>
-                <i class="fas fa-arrow-right-long"></i>
+        <div class="user-info">
+            <h1>Fahim Ahammad Mazumder <i class="fas fa-check-circle verify-icon"></i></h1>
+            <p>Digital Strategist & Entrepreneur</p>
+        </div>
+
+        <h2 class="section-title">Official Links</h2>
+        <div class="action-buttons">
+            <a href="https://iamfahimofficial.github.io/Portfolio/" target="_blank" class="fb-btn btn-portfolio">
+                <i class="fas fa-user-circle"></i> View Official Portfolio
             </a>
-
-            <a href="https://sites.google.com/view/fbindeals" target="_blank" class="premium-link link-bd">
-                <span>BD Local Shop</span>
-                <i class="fas fa-bag-shopping"></i>
+            <a href="https://sites.google.com/view/fbindeals" target="_blank" class="fb-btn btn-bd-shop">
+                <i class="fas fa-shopping-bag"></i> BD Local Shop
             </a>
-
-            <a href="https://www.amazon.com" target="_blank" class="premium-link link-global">
-                <span>Global Digital Shop</span>
-                <i class="fas fa-globe"></i>
+            <a href="https://www.fahix.com" target="_blank" class="fb-btn btn-global">
+                <i class="fas fa-globe"></i> Global Digital Shop
             </a>
-
-            <div class="premium-link link-blog">
-                <span>Expert Blog (Disabled)</span>
-                <i class="fas fa-lock"></i>
-            </div>
+            <a href="#" class="fb-btn btn-blog">
+                <i class="fas fa-lock"></i> Expert Blog (Coming Soon)
+            </a>
         </div>
 
-        <div class="social-hub">
-            <a href="https://facebook.com/iamfahimofficial" target="_blank" class="social-box"><i class="fab fa-facebook"></i></a>
-            <a href="https://Instagram.com/iamfahimofficial" target="_blank" class="social-box"><i class="fab fa-instagram"></i></a>
-            <a href="https://linkedin.com/in/iamfahimofficial-" target="_blank" class="social-box"><i class="fab fa-linkedin"></i></a>
-            <a href="https://wa.me/8801317621550" target="_blank" class="social-box"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://youtube.com/@iamfahimofficial" target="_blank" class="social-box"><i class="fab fa-youtube"></i></a>
-            <a href="https://tiktok.com/@iamfahimofficiall" target="_blank" class="social-box"><i class="fab fa-tiktok"></i></a>
-            <a href="https://github.com/iamfahimofficial" target="_blank" class="social-box"><i class="fab fa-github"></i></a>
-            <a href="https://x.com/xfahimofficial" target="_blank" class="social-box"><i class="fa-brands fa-x-twitter"></i></a>
+        <h2 class="section-title">Connect with Me</h2>
+        <div class="social-grid">
+            <a href="https://facebook.com/iamfahimofficial" class="social-item"><i class="fab fa-facebook"></i></a>
+            <a href="https://Instagram.com/iamfahimofficial" class="social-item"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/iamfahimofficial-" class="social-item"><i class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/8801317621550" class="social-item"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://youtube.com/@iamfahimofficial" class="social-item"><i class="fab fa-youtube"></i></a>
+            <a href="https://tiktok.com/@iamfahimofficiall" class="social-item"><i class="fab fa-tiktok"></i></a>
+            <a href="https://github.com/iamfahimofficial" class="social-item"><i class="fab fa-github"></i></a>
+            <a href="https://x.com/xfahimofficial" class="social-item"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
 
-        <h2 class="section-label">Expertise</h2>
-        <div class="service-tile">
-            <h3><i class="fas fa-pen-nib" style="color:var(--accent)"></i> Article Writing</h3>
-            <p>Premium SEO-optimized content creation for global digital landscapes.</p>
-        </div>
-        <div class="service-tile">
-            <h3><i class="fas fa-store" style="color:var(--accent)"></i> E-commerce Solutions</h3>
-            <p>Scaling businesses through expert management and digital shop setup.</p>
+        <div class="footer">
+            <p><i class="fas fa-envelope"></i> me@fahimofficial.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Chattogram, Bangladesh</p>
+            <p style="margin-top: 20px; opacity: 0.5;">© 2026 FAHIM OFFICIAL. ALL RIGHTS RESERVED.</p>
         </div>
     </div>
-
-    <footer>
-        <h2 class="section-label" style="color: white;">Contact</h2>
-        <a href="mailto:me@fahimofficial.com" class="contact-pill"><i class="fas fa-envelope"></i> me@fahimofficial.com</a>
-        <a href="mailto:support@fahix.com" class="contact-pill"><i class="fas fa-envelope"></i> support@fahix.com</a>
-        <p class="contact-pill"><i class="fas fa-location-dot"></i> Chattogram, Bangladesh</p>
-        <p style="margin-top: 40px; font-size: 10px; color: #444; letter-spacing: 2px;">© 2026 FAHIM OFFICIAL. ALL RIGHTS RESERVED.</p>
-    </footer>
 
 </body>
     </html>
