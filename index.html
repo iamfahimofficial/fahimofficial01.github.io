@@ -301,6 +301,63 @@
             </a>
         </div>
     </section>
+    <div id="floatingVideo" style="position: fixed; bottom: 100px; right: 20px; z-index: 9999; width: 300px; background: #000; border: 2px solid var(--theme-color); border-radius: 15px; overflow: hidden; box-shadow: 0 0 20px rgba(255, 145, 0, 0.4); cursor: move;">
+    
+    <div id="videoHeader" style="padding: 5px; background: var(--theme-color); color: #000; text-align: center; font-size: 10px; font-weight: 900; text-transform: uppercase;">
+        Drag to Move
+    </div>
+
+    <iframe 
+        width="100%" 
+        height="170" 
+        src="https://www.youtube.com/embed/nfs8NYg7yQM" 
+        frameborder="0" 
+        allow="autoplay; encrypted-media; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+</div>
+
+<script>
+    // মাউস দিয়ে ড্রাগ করার ফাংশন
+    dragElement(document.getElementById("floatingVideo"));
+
+    function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById("videoHeader")) {
+            document.getElementById("videoHeader").onmousedown = dragMouseDown;
+        } else {
+            elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            // bottom এবং right রিসেট করা হচ্ছে যাতে ড্রাগ কাজ করে
+            elmnt.style.bottom = "auto";
+            elmnt.style.right = "auto";
+        }
+
+        function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+</script>
 
     <section id="shop" class="btn-group">
         <a href="https://sites.google.com/view/fbindeals" target="_blank" class="orange-btn">VISIT SHOP</a>
