@@ -28,7 +28,7 @@
             overflow-x: hidden;
         }
 
-        /* 1. Nav Buttons - Fixed Serial & Single Line */
+        /* Nav Buttons - Fixed Serial & Single Line */
         .header-nav {
             position: fixed;
             top: 20px;
@@ -39,7 +39,7 @@
             gap: 6px;
             width: 95%;
             justify-content: center;
-            flex-wrap: nowrap; /* Forces one line */
+            flex-wrap: nowrap;
         }
 
         .mini-btn {
@@ -61,9 +61,8 @@
             color: black;
         }
 
-        /* Hero & Profile - Info Untouched */
         .hero {
-            height: 40vh;
+            height: 35vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -71,9 +70,9 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 10vw, 5rem);
+            font-size: clamp(2.2rem, 8vw, 4.5rem);
             font-weight: 900;
-            letter-spacing: -2px;
+            letter-spacing: -1px;
             background: linear-gradient(to bottom, #fff, var(--theme-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -87,10 +86,11 @@
             border: 1px solid rgba(255, 145, 0, 0.2);
             max-width: 90%;
             width: 500px;
-            margin: 0 auto 50px auto;
+            margin: 0 auto 40px auto;
             text-align: center;
         }
 
+        /* 4.6em Logo Size - Fixed */
         .inline-logo {
             width: 4.6em; 
             height: 4.6em;
@@ -128,13 +128,44 @@
         .social-links a { color: #ccc; font-size: 24px; transition: 0.3s; }
         .social-links a:hover { color: var(--theme-color); transform: translateY(-3px); }
 
-        /* Grid & Content - Info Untouched */
+        /* Action Buttons */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .orange-btn {
+            padding: 14px 25px;
+            font-size: 12px;
+            font-weight: 900;
+            color: var(--theme-color);
+            text-decoration: none;
+            background: #000;
+            border-radius: 10px;
+            border: 1px solid var(--theme-color);
+            transition: 0.3s;
+            text-align: center;
+            min-width: 160px;
+            text-transform: uppercase;
+        }
+
+        .orange-btn:hover {
+            background: var(--theme-color);
+            color: black;
+            box-shadow: 0 0 15px var(--theme-color);
+        }
+
         .section-title {
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--theme-color);
             margin: 40px 0 30px 0;
             text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .grid-container {
@@ -154,7 +185,7 @@
             border: 1px solid #333;
         }
 
-        /* 2. Song Section - Only 2 Links from Instructions */
+        /* Song Section */
         .song-wrapper {
             display: flex;
             flex-direction: column;
@@ -217,21 +248,26 @@
                 <a href="https://x.com/xfahimofficial" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
             <br>
-            <a href="https://iamfahimofficial.github.io/Portfolio/" target="_blank" style="color:var(--theme-color); text-decoration:underline;">Visit Portfolio Link</a>
+            <a href="https://iamfahimofficial.github.io/Portfolio/" target="_blank" style="color:var(--theme-color); text-decoration:underline; font-size:13px;">Visit Portfolio Link</a>
         </div>
+    </section>
+
+    <section id="shop" class="btn-group">
+        <a href="https://sites.google.com/view/fbindeals" target="_blank" class="orange-btn">VISIT SHOP</a>
+        <a href="https://iamfahimofficial.github.io/Portfolio/" target="_blank" class="orange-btn">OUR SERVICES</a>
     </section>
 
     <h2 class="section-title">Services</h2>
     <section id="services" class="grid-container">
-        <div class="card"><i class="fas fa-pen-nib fa-2x"></i><h3>Article Writer</h3><p>Professional SEO content creation for digital platforms.</p></div>
-        <div class="card"><i class="fas fa-shopping-cart fa-2x"></i><h3>E-commerce Solutions</h3><p>Full-scale business solutions and online shop management.</p></div>
-        <div class="card"><i class="fas fa-laptop-code fa-2x"></i><h3>Web Strategy</h3><p>End-to-end administration and digital growth planning.</p></div>
+        <div class="card"><i class="fas fa-pen-nib fa-2x" style="color:var(--theme-color);"></i><h3 style="margin-top:15px;">Article Writer</h3><p style="margin-top:10px;">Professional SEO content creation for digital platforms.</p></div>
+        <div class="card"><i class="fas fa-shopping-cart fa-2x" style="color:var(--theme-color);"></i><h3 style="margin-top:15px;">E-commerce Solutions</h3><p style="margin-top:10px;">Full-scale business solutions and online shop management.</p></div>
+        <div class="card"><i class="fas fa-laptop-code fa-2x" style="color:var(--theme-color);"></i><h3 style="margin-top:15px;">Web Strategy</h3><p style="margin-top:10px;">End-to-end administration and digital growth planning.</p></div>
     </section>
 
     <h2 class="section-title">Latest Blogs</h2>
     <section id="blog" class="grid-container">
-        <div class="blog-card"><div class="blog-content"><span class="blog-date">LATEST UPDATE</span><div class="blog-title">Digital Marketing Trends 2026</div><p class="blog-excerpt">Exploring the new era of AI-driven marketing strategies...</p></div></div>
-        <div class="blog-card"><div class="blog-content"><span class="blog-date">TIPS & TRICKS</span><div class="blog-title">SEO Secrets for Beginners</div><p class="blog-excerpt">How to rank your content on the first page of Google...</p></div></div>
+        <div class="blog-card" style="text-align:left;"><div class="blog-content"><span class="blog-date">LATEST UPDATE</span><div class="blog-title" style="margin:10px 0; font-weight:900;">Digital Marketing Trends 2026</div><p class="blog-excerpt" style="color:#888; font-size:12px;">Exploring the new era of AI-driven marketing strategies...</p></div></div>
+        <div class="blog-card" style="text-align:left;"><div class="blog-content"><span class="blog-date">TIPS & TRICKS</span><div class="blog-title" style="margin:10px 0; font-weight:900;">SEO Secrets for Beginners</div><p class="blog-excerpt" style="color:#888; font-size:12px;">How to rank your content on the first page of Google...</p></div></div>
     </section>
 
     <div id="song-section" class="song-wrapper">
@@ -245,8 +281,8 @@
             <a href="mailto:support@fahix.com" style="color:#888; text-decoration:none; margin:0 10px;">support@fahix.com</a>
         </div>
         <p>Chattogram, Bangladesh</p>
-        <p style="margin-top: 20px; opacity: 0.4;">© 2026-31-01 Fahim Official ✔️ All Rights Required</p>
+        <p style="margin-top: 20px; opacity: 0.4;">© 2026-01-31 Fahim Official ✔️ All Rights Required</p>
     </footer>
 
 </body>
-        </html>
+                                                 </html>
