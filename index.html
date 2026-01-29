@@ -89,7 +89,7 @@
             box-shadow: 0 0 30px rgba(255, 145, 0, 0.1);
         }
 
-        /* Inline Tiny Logo - UPDATED TO 4.6em */
+        /* Inline Logo - 4.6em as requested */
         .inline-logo {
             width: 4.6em; 
             height: 4.6em;
@@ -139,7 +139,7 @@
             transform: translateY(-3px);
         }
 
-        /* Restored Portfolio Link (Underlined) */
+        /* Portfolio Link */
         .portfolio-text-link {
             display: inline-block;
             margin-top: 30px;
@@ -243,7 +243,7 @@
         .blog-title { font-size: 14px; font-weight: bold; margin-bottom: 10px; color: white; }
         .blog-excerpt { font-size: 11px; color: #888; line-height: 1.5; }
 
-        /* 7. Standard Minimal Footer */
+        /* 7. Footer Styling */
         footer {
             background: #080808;
             padding: 30px 20px;
@@ -261,6 +261,18 @@
         }
 
         .footer-link:hover { color: var(--theme-color); }
+
+        .song-container {
+            margin: 0 auto 30px auto;
+            max-width: 90%;
+            width: 500px;
+        }
+
+        .song-container iframe {
+            border-radius: 20px;
+            border: 2px solid var(--theme-color);
+            box-shadow: 0 0 20px rgba(255, 145, 0, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -268,6 +280,7 @@
     <nav class="header-nav">
         <a href="#" class="mini-btn">Home</a>
         <a href="#about" class="mini-btn">About</a>
+        <a href="#song-section" class="mini-btn">Song</a>
         <a href="#shop" class="mini-btn">Shop</a>
         <a href="#blog" class="mini-btn">Blog</a>
     </nav>
@@ -301,63 +314,6 @@
             </a>
         </div>
     </section>
-    <div id="floatingVideo" style="position: fixed; bottom: 100px; right: 20px; z-index: 9999; width: 300px; background: #000; border: 2px solid var(--theme-color); border-radius: 15px; overflow: hidden; box-shadow: 0 0 20px rgba(255, 145, 0, 0.4); cursor: move;">
-    
-    <div id="videoHeader" style="padding: 5px; background: var(--theme-color); color: #000; text-align: center; font-size: 10px; font-weight: 900; text-transform: uppercase;">
-        Drag to Move
-    </div>
-
-    <iframe 
-        width="100%" 
-        height="170" 
-        src="https://www.youtube.com/embed/nfs8NYg7yQM" 
-        frameborder="0" 
-        allow="autoplay; encrypted-media; picture-in-picture" 
-        allowfullscreen>
-    </iframe>
-</div>
-
-<script>
-    // মাউস দিয়ে ড্রাগ করার ফাংশন
-    dragElement(document.getElementById("floatingVideo"));
-
-    function dragElement(elmnt) {
-        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-        if (document.getElementById("videoHeader")) {
-            document.getElementById("videoHeader").onmousedown = dragMouseDown;
-        } else {
-            elmnt.onmousedown = dragMouseDown;
-        }
-
-        function dragMouseDown(e) {
-            e = e || window.event;
-            e.preventDefault();
-            pos3 = e.clientX;
-            pos4 = e.clientY;
-            document.onmouseup = closeDragElement;
-            document.onmousemove = elementDrag;
-        }
-
-        function elementDrag(e) {
-            e = e || window.event;
-            e.preventDefault();
-            pos1 = pos3 - e.clientX;
-            pos2 = pos4 - e.clientY;
-            pos3 = e.clientX;
-            pos4 = e.clientY;
-            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-            // bottom এবং right রিসেট করা হচ্ছে যাতে ড্রাগ কাজ করে
-            elmnt.style.bottom = "auto";
-            elmnt.style.right = "auto";
-        }
-
-        function closeDragElement() {
-            document.onmouseup = null;
-            document.onmousemove = null;
-        }
-    }
-</script>
 
     <section id="shop" class="btn-group">
         <a href="https://sites.google.com/view/fbindeals" target="_blank" class="orange-btn">VISIT SHOP</a>
@@ -402,12 +358,26 @@
     </section>
 
     <footer id="contact">
-        <div style="margin-bottom: 15px;">
-            <a href="mailto:me@fahimofficial.com" class="footer-link">me@fahimofficial.com</a>
+        
+        <div id="song-section" class="song-container">
+            <iframe 
+                width="100%" 
+                height="280" 
+                src="https://www.youtube.com/embed/nfs8NYg7yQM" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+            <a href="mailto:me@fahimofficial.com" class="footer-link">me@fahimofficial.com</a> |
             <a href="mailto:support@fahix.com" class="footer-link">support@fahix.com</a>
         </div>
+
         <p>Chattogram, Bangladesh</p>
-        <p style="margin-top: 20px; opacity: 0.4;">© 2018 Fahim Official ✔️ All Rights Required </p>
+        <p style="margin-top: 20px; opacity: 0.4;">© 2026-01-30 Fahim Official ✔️ All Rights Required </p>
     </footer>
 
 </body>
