@@ -28,7 +28,7 @@
             overflow-x: hidden;
         }
 
-        /* Nav Buttons - Fixed Single Line with Horizontal Scroll */
+        /* Nav Buttons - Strict Single Line */
         .header-nav {
             position: fixed;
             top: 20px;
@@ -36,29 +36,24 @@
             transform: translateX(-50%);
             z-index: 1000;
             display: flex;
-            gap: 8px;
-            width: 95%;
-            justify-content: flex-start; /* Mobile friendliness */
-            overflow-x: auto; /* এক লাইনে থাকবে, বেশি হলে স্ক্রল হবে */
-            white-space: nowrap;
-            padding: 10px 5px;
-            scrollbar-width: none; /* Hide scrollbar for Firefox */
+            gap: 4px;
+            width: 98%;
+            justify-content: center;
+            flex-wrap: nowrap;
         }
 
-        .header-nav::-webkit-scrollbar { display: none; } /* Hide scrollbar for Chrome/Safari */
-
         .mini-btn {
-            padding: 8px 15px;
-            background: rgba(0, 0, 0, 0.85);
-            border: 1px solid rgba(255, 145, 0, 0.4);
+            padding: 5px 8px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 145, 0, 0.3);
             border-radius: 50px;
             color: var(--theme-color);
             text-decoration: none;
-            font-size: 11px;
+            font-size: 9px; /* Adjusted size to fit all */
             font-weight: bold;
             text-transform: uppercase;
             transition: 0.3s;
-            flex-shrink: 0; /* বাটন ছোট হবে না */
+            white-space: nowrap;
         }
 
         .mini-btn:hover {
@@ -67,13 +62,12 @@
         }
 
         .hero {
-            height: 40vh;
+            height: 35vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding-top: 60px;
         }
 
         .hero h1 {
@@ -83,21 +77,18 @@
             background: linear-gradient(to bottom, #fff, var(--theme-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 5px;
         }
 
         .hero-copy {
-            font-size: 12px;
+            font-size: 11px;
             color: #fff;
-            opacity: 0.9;
-            font-weight: 600;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
 
-        .verify-badge-blue {
-            color: #1DA1F2; /* Facebook Blue */
-            font-size: 11px;
-            vertical-align: middle;
-        }
+        .verify-badge-blue { color: #1DA1F2; font-size: 10px; }
 
         .profile-card {
             background: rgba(10, 10, 10, 0.9);
@@ -226,15 +217,13 @@
             border: 2px solid var(--theme-color);
         }
 
-        /* View More Songs Style */
-        .more-songs-link {
+        .view-more-songs {
             display: block;
             text-align: center;
-            margin: 20px 0 40px 0;
             color: var(--theme-color);
             text-decoration: underline;
-            font-weight: bold;
-            font-size: 16px;
+            font-size: 14px;
+            margin: 20px 0;
         }
 
         footer {
@@ -244,11 +233,6 @@
             border-top: 1px solid #222;
             font-size: 12px;
             color: #666;
-        }
-
-        /* Desktop specific alignment adjustment */
-        @media (min-width: 768px) {
-            .header-nav { justify-content: center; overflow: hidden; }
         }
     </style>
 </head>
@@ -265,7 +249,7 @@
 
     <header class="hero">
         <h1>FAHIM OFFICIAL</h1>
-        <p class="hero-copy">©iamfahimofficial <i class="fas fa-check-circle verify-badge-blue"></i></p>
+        <div class="hero-copy">©iamfahimofficial <i class="fas fa-check-circle verify-badge-blue"></i></div>
     </header>
 
     <section id="about">
@@ -312,7 +296,7 @@
         <div class="song-container"><iframe src="https://www.youtube.com/embed/ExAire1rQpQ" frameborder="0" allowfullscreen></iframe></div>
     </div>
 
-    <a href="https://iamfahimofficial.github.io/Playlist" target="_blank" class="more-songs-link">VIEW MORE SONGS</a>
+    <a href="https://iamfahimofficial.github.io/Playlist" target="_blank" class="view-more-songs">view more songs</a>
 
     <footer>
         <div style="margin-bottom: 20px;">
