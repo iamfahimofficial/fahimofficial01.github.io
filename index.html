@@ -28,7 +28,7 @@
             overflow-x: hidden;
         }
 
-        /* Nav Buttons - Fixed Serial & Single Line */
+        /* Nav Buttons - Fixed Single Line with Horizontal Scroll */
         .header-nav {
             position: fixed;
             top: 20px;
@@ -36,24 +36,29 @@
             transform: translateX(-50%);
             z-index: 1000;
             display: flex;
-            gap: 6px;
+            gap: 8px;
             width: 95%;
-            justify-content: center;
-            flex-wrap: nowrap;
+            justify-content: flex-start; /* Mobile friendliness */
+            overflow-x: auto; /* এক লাইনে থাকবে, বেশি হলে স্ক্রল হবে */
+            white-space: nowrap;
+            padding: 10px 5px;
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
         }
 
+        .header-nav::-webkit-scrollbar { display: none; } /* Hide scrollbar for Chrome/Safari */
+
         .mini-btn {
-            padding: 6px 12px;
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid rgba(255, 145, 0, 0.3);
+            padding: 8px 15px;
+            background: rgba(0, 0, 0, 0.85);
+            border: 1px solid rgba(255, 145, 0, 0.4);
             border-radius: 50px;
             color: var(--theme-color);
             text-decoration: none;
-            font-size: 10px;
+            font-size: 11px;
             font-weight: bold;
             text-transform: uppercase;
             transition: 0.3s;
-            white-space: nowrap;
+            flex-shrink: 0; /* বাটন ছোট হবে না */
         }
 
         .mini-btn:hover {
@@ -62,11 +67,13 @@
         }
 
         .hero {
-            height: 35vh;
+            height: 40vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding-top: 60px;
         }
 
         .hero h1 {
@@ -76,6 +83,20 @@
             background: linear-gradient(to bottom, #fff, var(--theme-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+
+        .hero-copy {
+            font-size: 12px;
+            color: #fff;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .verify-badge-blue {
+            color: #1DA1F2; /* Facebook Blue */
+            font-size: 11px;
+            vertical-align: middle;
         }
 
         .profile-card {
@@ -90,7 +111,6 @@
             text-align: center;
         }
 
-        /* 4.6em Logo Size - Fixed */
         .inline-logo {
             width: 4.6em; 
             height: 4.6em;
@@ -128,7 +148,6 @@
         .social-links a { color: #ccc; font-size: 24px; transition: 0.3s; }
         .social-links a:hover { color: var(--theme-color); transform: translateY(-3px); }
 
-        /* Action Buttons */
         .btn-group {
             display: flex;
             justify-content: center;
@@ -185,7 +204,6 @@
             border: 1px solid #333;
         }
 
-        /* Song Section */
         .song-wrapper {
             display: flex;
             flex-direction: column;
@@ -208,6 +226,17 @@
             border: 2px solid var(--theme-color);
         }
 
+        /* View More Songs Style */
+        .more-songs-link {
+            display: block;
+            text-align: center;
+            margin: 20px 0 40px 0;
+            color: var(--theme-color);
+            text-decoration: underline;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
         footer {
             background: #080808;
             padding: 40px 20px;
@@ -215,6 +244,11 @@
             border-top: 1px solid #222;
             font-size: 12px;
             color: #666;
+        }
+
+        /* Desktop specific alignment adjustment */
+        @media (min-width: 768px) {
+            .header-nav { justify-content: center; overflow: hidden; }
         }
     </style>
 </head>
@@ -226,10 +260,12 @@
         <a href="#shop" class="mini-btn">SHOP</a>
         <a href="#blog" class="mini-btn">BLOG</a>
         <a href="#song-section" class="mini-btn">SONG</a>
+        <a href="https://iamfahimofficial.github.io/Playlist" target="_blank" class="mini-btn">SONGS</a>
     </nav>
 
     <header class="hero">
         <h1>FAHIM OFFICIAL</h1>
+        <p class="hero-copy">©iamfahimofficial <i class="fas fa-check-circle verify-badge-blue"></i></p>
     </header>
 
     <section id="about">
@@ -255,7 +291,6 @@
     <section id="shop" class="btn-group">
         <a href="https://iamfahimofficial.github.io/fahix-" target="_blank" class="orange-btn">VISIT SHOP</a>
         <a href="https://iamfahimofficial.github.io/Portfolio/" target="_blank" class="orange-btn">OUR SERVICES</a>
-        <a href="https://iamfahimofficial.github.io/Playlist/" target="_blank" class="orange-btn">My Playlist</a
     </section>
 
     <h2 class="section-title">Services</h2>
@@ -276,6 +311,8 @@
         <div class="song-container"><iframe src="https://www.youtube.com/embed/-Hj-4hqUaaI" frameborder="0" allowfullscreen></iframe></div>
         <div class="song-container"><iframe src="https://www.youtube.com/embed/ExAire1rQpQ" frameborder="0" allowfullscreen></iframe></div>
     </div>
+
+    <a href="https://iamfahimofficial.github.io/Playlist" target="_blank" class="more-songs-link">VIEW MORE SONGS</a>
 
     <footer>
         <div style="margin-bottom: 20px;">
