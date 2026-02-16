@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fahim Ahammad Mazumder | Official</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --theme-color: #ff9100;
             --theme-gradient: linear-gradient(135deg, #ff9100, #ff3300);
-            --bg-color: #050505;
-            --glass-bg: rgba(20, 20, 20, 0.6);
-            --glass-border: rgba(255, 145, 0, 0.15);
+            --bg-dark: #0a0f16;
+            --glass-bg: rgba(15, 20, 28, 0.7);
+            --glass-border: rgba(255, 145, 0, 0.2);
             --text-main: #ffffff;
-            --text-muted: #a0a0a0;
+            --text-muted: #b0bac5;
         }
 
         * {
@@ -25,25 +25,20 @@
         }
 
         body {
-            /* Added a dark overlay to make the content pop against your background image */
-            background: linear-gradient(rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.95)), url('IMG_20260127_173130.jpg') no-repeat center center fixed;
+            /* Premium Agency Deep Background with Subtle Glows */
+            background: radial-gradient(circle at top right, rgba(255, 145, 0, 0.08), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(0, 115, 255, 0.05), transparent 40%),
+                        linear-gradient(rgba(10, 15, 22, 0.92), rgba(10, 15, 22, 0.98)), 
+                        url('IMG_20260127_173130.jpg') no-repeat center center fixed;
             background-size: cover;
             color: var(--text-main);
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', sans-serif; /* Poppins for general elegant text */
             scroll-behavior: smooth;
             overflow-x: hidden;
         }
 
-        /* --- Animations --- */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 10px rgba(255, 145, 0, 0.2); }
-            50% { box-shadow: 0 0 25px rgba(255, 145, 0, 0.5); }
-            100% { box-shadow: 0 0 10px rgba(255, 145, 0, 0.2); }
+        h1, h2, h3, .mini-btn, .premium-btn {
+            font-family: 'Montserrat', sans-serif; /* Montserrat for punchy bold headers */
         }
 
         /* --- Floating Navigation --- */
@@ -54,27 +49,28 @@
             transform: translateX(-50%);
             z-index: 1000;
             display: flex;
-            gap: 8px;
+            gap: 10px;
             width: max-content;
             max-width: 95%;
-            padding: 10px 20px;
-            background: rgba(10, 10, 10, 0.8);
+            padding: 12px 25px;
+            background: rgba(10, 15, 22, 0.85);
             backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
             border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
         }
-
         .header-nav::-webkit-scrollbar { display: none; }
 
         .mini-btn {
-            padding: 8px 15px;
+            padding: 8px 16px;
             color: var(--text-main);
             text-decoration: none;
             font-size: 11px;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 1px;
             border-radius: 30px;
             transition: all 0.3s ease;
             white-space: nowrap;
@@ -94,102 +90,105 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding-top: 80px;
-            animation: fadeInUp 1s ease-out;
+            padding-top: 100px;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            font-size: clamp(2.5rem, 8vw, 5rem);
             font-weight: 900;
-            letter-spacing: -2px;
+            letter-spacing: -1px;
+            background: var(--text-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 10px 30px rgba(255, 255, 255, 0.1);
+            margin-bottom: 10px;
+        }
+        .hero h1 span {
             background: var(--theme-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0px 10px 30px rgba(255, 145, 0, 0.3);
         }
 
         .hero-copy {
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 14px;
+            font-weight: 500;
             color: #fff;
-            margin-top: 10px;
             display: flex;
             align-items: center;
-            gap: 6px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 5px 15px;
-            border-radius: 20px;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
-
-        .verify-badge-blue { color: #1DA1F2; font-size: 12px; }
+        .verify-badge-blue { color: #1DA1F2; font-size: 14px; }
 
         /* --- Premium Profile Card --- */
         .profile-card {
             background: var(--glass-bg);
             backdrop-filter: blur(25px);
-            padding: 50px 30px;
-            border-radius: 30px;
+            padding: 50px 35px;
+            border-radius: 24px;
             border: 1px solid var(--glass-border);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
             max-width: 90%;
-            width: 450px;
+            width: 500px;
             margin: 0 auto 50px auto;
             text-align: center;
-            animation: fadeInUp 1.2s ease-out;
             position: relative;
-            overflow: hidden;
         }
 
-        /* Glowing ring around the image */
         .img-container {
             position: relative;
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 20px auto;
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 25px auto;
         }
-
-        .img-container::before {
+        .img-container::after {
             content: '';
             position: absolute;
-            top: -5px; left: -5px; right: -5px; bottom: -5px;
+            top: -4px; left: -4px; right: -4px; bottom: -4px;
             background: var(--theme-gradient);
             border-radius: 50%;
             z-index: -1;
-            animation: pulseGlow 3s infinite;
+            animation: pulse 2.5s infinite alternate;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 10px rgba(255, 145, 0, 0.3); }
+            100% { box-shadow: 0 0 25px rgba(255, 145, 0, 0.6); }
         }
 
         .inline-logo {
             width: 100%; 
             height: 100%;
             border-radius: 50%;
-            border: 3px solid #000;
+            border: 4px solid var(--bg-dark);
             object-fit: cover;
         }
 
         .verified-name {
-            font-size: clamp(1.6rem, 5vw, 2.2rem);
-            font-weight: 800;
+            font-size: clamp(1.4rem, 5vw, 1.8rem);
+            font-weight: 700;
             color: white;
             display: block;
+            margin-bottom: 5px;
         }
-
         .verify-badge { color: var(--theme-color); margin-left: 5px; }
 
         .tagline {
             color: var(--text-muted);
-            margin-top: 8px;
-            font-size: 12px;
-            letter-spacing: 2px;
+            font-size: 13px;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 500;
         }
 
-        /* --- Social Links Hover Effects --- */
+        /* --- Official Brand Color Social Links --- */
         .social-links {
-            margin-top: 30px;
+            margin-top: 35px;
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
@@ -197,52 +196,38 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            color: #fff;
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            color: var(--text-muted);
             font-size: 18px;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
             text-decoration: none;
-            border: 1px solid transparent;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .social-links a:hover { 
-            background: var(--theme-color); 
-            color: #000; 
-            transform: translateY(-5px);
-            border-color: var(--theme-color);
-            box-shadow: 0 5px 15px rgba(255, 145, 0, 0.4);
-        }
+        /* Brand Specific Hovers */
+        .social-links a.fb:hover { background: #1877F2; color: #fff; border-color: #1877F2; transform: translateY(-5px); box-shadow: 0 8px 20px rgba(24, 119, 242, 0.4);}
+        .social-links a.ig:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); color: #fff; border-color: transparent; transform: translateY(-5px); box-shadow: 0 8px 20px rgba(214, 36, 159, 0.4);}
+        .social-links a.in:hover { background: #0A66C2; color: #fff; border-color: #0A66C2; transform: translateY(-5px); box-shadow: 0 8px 20px rgba(10, 102, 194, 0.4);}
+        .social-links a.wa:hover { background: #25D366; color: #fff; border-color: #25D366; transform: translateY(-5px); box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);}
+        .social-links a.yt:hover { background: #FF0000; color: #fff; border-color: #FF0000; transform: translateY(-5px); box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);}
+        .social-links a.tk:hover { background: #000000; color: #fff; border-color: #ff0050; transform: translateY(-5px); box-shadow: 2px 2px 0px #00f2fe, -2px -2px 0px #ff0050;}
+        .social-links a.gh:hover { background: #fafafa; color: #000; border-color: #fafafa; transform: translateY(-5px); box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);}
+        .social-links a.tw:hover { background: #000; color: #fff; border-color: #fff; transform: translateY(-5px); box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);}
 
-        .portfolio-link {
-            display: inline-block;
-            margin-top: 25px;
-            color: var(--theme-color);
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
-            border-bottom: 1px dashed var(--theme-color);
-            padding-bottom: 2px;
-            transition: 0.3s;
-        }
-        
-        .portfolio-link:hover { color: #fff; border-color: #fff; }
-
-        /* --- Call to Action Buttons --- */
+        /* --- Buttons --- */
         .btn-group {
             display: flex;
             justify-content: center;
             gap: 20px;
-            padding: 10px;
             flex-wrap: wrap;
-            margin-bottom: 80px;
-            animation: fadeInUp 1.4s ease-out;
+            margin-bottom: 70px;
         }
 
         .premium-btn {
-            padding: 16px 35px;
+            padding: 15px 35px;
             font-size: 13px;
             font-weight: 800;
             color: #000;
@@ -251,305 +236,187 @@
             border-radius: 12px;
             transition: all 0.3s ease;
             text-align: center;
-            min-width: 160px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 8px 20px rgba(255, 145, 0, 0.3);
+            letter-spacing: 1.5px;
+            box-shadow: 0 8px 20px rgba(255, 145, 0, 0.25);
         }
-
         .premium-btn-outline {
             background: transparent;
-            color: var(--theme-color);
-            border: 2px solid var(--theme-color);
+            color: var(--text-main);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             box-shadow: none;
         }
+        .premium-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(255, 145, 0, 0.5); }
+        .premium-btn-outline:hover { background: #fff; color: #000; border-color: #fff; }
 
-        .premium-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 145, 0, 0.6);
-        }
-        
-        .premium-btn-outline:hover {
-            background: var(--theme-color);
-            color: #000;
-        }
-
-        /* --- Section Titles --- */
+        /* --- Section Titles Stylized --- */
         .section-title {
             text-align: center;
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #fff;
             margin: 60px 0 40px 0;
-            text-transform: uppercase;
-            letter-spacing: 3px;
             font-weight: 900;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .section-title span { color: var(--theme-color); }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px; left: 20%; width: 60%; height: 3px;
+            background: var(--theme-gradient);
+            border-radius: 50px;
         }
 
-        .section-title span { color: var(--theme-color); }
-
-        /* --- Grid & Cards (Services & Blogs) --- */
-        .grid-container {
-            display: flex;
-            justify-content: center;
+        /* --- Smart CSS Grid for Services (Perfect Mobile Scaling) --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            flex-wrap: wrap;
             padding: 0 20px 60px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .card, .blog-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
+        .service-card {
+            background: rgba(20, 25, 34, 0.6);
+            backdrop-filter: blur(15px);
             padding: 40px 30px;
             border-radius: 20px;
-            width: 320px;
-            text-align: center;
-            border: 1px solid var(--glass-border);
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .card::before {
+        .service-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 4px;
+            top: 0; left: 0; width: 4px; height: 100%;
             background: var(--theme-gradient);
-            transform: scaleX(0);
-            transform-origin: left;
+            transform: scaleY(0);
+            transform-origin: bottom;
             transition: transform 0.4s ease;
         }
 
-        .card:hover, .blog-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
-            border-color: rgba(255, 145, 0, 0.4);
+        .service-card:hover {
+            transform: translateY(-8px);
+            background: rgba(30, 35, 45, 0.8);
+            border-color: var(--glass-border);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
         }
+        .service-card:hover::before { transform: scaleY(1); }
 
-        .card:hover::before { transform: scaleX(1); }
-
-        .card h3 { margin-top: 20px; font-size: 1.2rem; font-weight: 800; }
-        .card p { margin-top: 12px; font-size: 14px; color: var(--text-muted); line-height: 1.6; }
-
-        /* Blog Specifics */
-        .blog-card { text-align: left; padding: 35px; }
-        .blog-date { 
-            background: rgba(255, 145, 0, 0.1); 
-            color: var(--theme-color); 
-            padding: 5px 10px; 
-            border-radius: 5px; 
-            font-size: 10px; 
-            font-weight: 800; 
-            letter-spacing: 1px;
-        }
-        .blog-title { margin: 15px 0 10px 0; font-size: 1.3rem; font-weight: 900; line-height: 1.4;}
-        .blog-excerpt { color: var(--text-muted); font-size: 13px; line-height: 1.6;}
-
-        /* --- Stats/Extra Section (NEW) --- */
-        .stats-container {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            background: var(--glass-bg);
-            padding: 40px;
-            border-top: 1px solid var(--glass-border);
-            border-bottom: 1px solid var(--glass-border);
-            margin-bottom: 60px;
-        }
-        .stat-item { text-align: center; }
-        .stat-number { font-size: 2.5rem; font-weight: 900; color: var(--theme-color); }
-        .stat-label { font-size: 12px; color: #fff; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px;}
-
-        /* --- Songs Section --- */
-        .song-wrapper {
-            display: flex;
-            flex-direction: column;
+        .service-icon {
+            display: inline-flex;
             align-items: center;
-            gap: 30px;
-            margin: 0 auto 40px auto;
-            max-width: 90%;
-        }
-
-        .song-container {
-            width: 100%;
-            max-width: 600px;
-            aspect-ratio: 16 / 9;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid var(--glass-border);
-            transition: 0.3s;
-        }
-        
-        .song-container:hover { border-color: var(--theme-color); }
-
-        .song-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .view-more-songs {
-            display: inline-block;
-            text-align: center;
+            justify-content: center;
+            width: 60px; height: 60px;
+            background: rgba(255, 145, 0, 0.1);
             color: var(--theme-color);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 700;
-            margin: 10px auto 60px auto;
-            border-bottom: 1px solid var(--theme-color);
-            padding-bottom: 3px;
-            transition: 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            border-radius: 15px;
+            font-size: 24px;
+            margin-bottom: 20px;
         }
-        .view-more-songs:hover { color: #fff; border-color: #fff; }
+
+        .service-card h3 { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
+        .service-card p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
 
         /* --- Footer --- */
         footer {
-            background: #030303;
+            background: rgba(5, 8, 12, 0.95);
             padding: 60px 20px 40px 20px;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 13px;
-            color: var(--text-muted);
+            font-size: 14px;
         }
-
-        .footer-links { margin-bottom: 25px; }
-        .footer-links a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-            transition: 0.3s;
-            font-weight: 600;
-        }
+        .footer-links a { color: #fff; text-decoration: none; margin: 0 10px; transition: 0.3s; font-weight: 500;}
         .footer-links a:hover { color: var(--theme-color); }
-        
-        .copyright-tag {
-            margin-top: 15px;
-            font-size: 11px;
-            opacity: 0.7;
-        }
+        .copyright-tag { margin-top: 20px; font-size: 12px; color: #666; font-family: 'Montserrat', sans-serif;}
     </style>
 </head>
 <body>
 
     <nav class="header-nav">
         <a href="#" class="mini-btn">Home</a>
-        <a href="#about" class="mini-btn">About</a>
+        <a href="#about" class="mini-btn">Profile</a>
         <a href="#services" class="mini-btn">Services</a>
-        <a href="#shop" class="mini-btn">Shop</a>
-        <a href="#blog" class="mini-btn">Blog</a>
-        <a href="#song-section" class="mini-btn">Song</a>
+        <a href="https://iamfahimofficial.github.io/fahix-" target="_blank" class="mini-btn">Shop</a>
         <a href="https://iamfahimofficial.github.io/Playlist" target="_blank" class="mini-btn" style="color: var(--theme-color);">Playlist</a>
     </nav>
 
     <header class="hero">
         <h1>FAHIM <span>OFFICIAL</span></h1>
-        <div class="hero-copy">@iamfahimofficial <i class="fas fa-check-circle verify-badge-blue" aria-label="Verified"></i></div>
+        <div class="hero-copy">@iamfahimofficial <i class="fas fa-check-circle verify-badge-blue"></i></div>
     </header>
 
     <section id="about">
         <div class="profile-card">
             <div class="img-container">
-                <img src="FB_IMG_17576597773337071-removebg-preview.png" class="inline-logo" alt="Fahim Ahammad Mazumder - Digital Strategist">
+                <img src="FB_IMG_17576597773337071-removebg-preview.png" class="inline-logo" alt="Fahim Ahammad Mazumder">
             </div>
-            <span class="verified-name">Fahim Ahammad Mazumder <i class="fas fa-check-circle verify-badge" aria-label="Official"></i></span>
-            <p class="tagline">Digital Strategist & Entrepreneur</p>
+            <span class="verified-name">Fahim Ahammad Mazumder <i class="fas fa-check-circle verify-badge"></i></span>
+            <p class="tagline">Digital Strategist & IT Consultant</p>
             
             <div class="social-links">
-                <a href="https://facebook.com/iamfahimofficial" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://Instagram.com/iamfahimofficial" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://linkedin.com/in/iamfahimofficial-" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://wa.me/8801317621550" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://youtube.com/@iamfahimofficial" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://tiktok.com/@iamfahimofficiall" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                <a href="https://github.com/iamfahimofficial" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://x.com/xfahimofficial" target="_blank" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://facebook.com/iamfahimofficial" target="_blank" class="fb"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://Instagram.com/iamfahimofficial" target="_blank" class="ig"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/in/iamfahimofficial-" target="_blank" class="in"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://wa.me/8801317621550" target="_blank" class="wa"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://youtube.com/@iamfahimofficial" target="_blank" class="yt"><i class="fab fa-youtube"></i></a>
+                <a href="https://tiktok.com/@iamfahimofficiall" target="_blank" class="tk"><i class="fab fa-tiktok"></i></a>
+                <a href="https://github.com/iamfahimofficial" target="_blank" class="gh"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/xfahimofficial" target="_blank" class="tw"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
-            
-            <a href="https://iamfahimofficial.github.io/Portfolio/" target="_blank" class="portfolio-link">Explore My Complete Portfolio <i class="fas fa-arrow-right" style="margin-left:5px; font-size:10px;"></i></a>
         </div>
     </section>
 
-    <section id="shop" class="btn-group">
-        <a href="https://iamfahimofficial.github.io/fahix-" target="_blank" class="premium-btn">Visit Shop <i class="fas fa-shopping-bag" style="margin-left: 5px;"></i></a>
-        <a href="https://iamfahimofficial.github.io/Playlist/" target="_blank" class="premium-btn premium-btn-outline">Listen Songs <i class="fas fa-music" style="margin-left: 5px;"></i></a>
+    <section class="btn-group">
+        <a href="https://iamfahimofficial.github.io/Portfolio/" target="_blank" class="premium-btn">View Full Portfolio</a>
+        <a href="https://iamfahimofficial.github.io/fahix-" target="_blank" class="premium-btn premium-btn-outline">Explore Shop</a>
     </section>
 
-    <section class="stats-container">
-        <div class="stat-item">
-            <div class="stat-number">5+</div>
-            <div class="stat-label">Years Experience</div>
+    <h2 class="section-title">Exclusive <span>Expertise</span></h2>
+    <section id="services" class="services-grid">
+        
+        <div class="service-card">
+            <div class="service-icon"><i class="fas fa-globe"></i></div>
+            <h3>Portfolio Design & Domain Setup</h3>
+            <p>Stand out with a premium, custom-coded personal or agency portfolio. Includes end-to-end domain registration and high-speed hosting setup.</p>
         </div>
-        <div class="stat-item">
-            <div class="stat-number">2026</div>
-            <div class="stat-label">Digital Vision</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">Client Satisfaction</div>
-        </div>
-    </section>
 
-    <h2 class="section-title">Premium <span>Services</span></h2>
-    <section id="services" class="grid-container">
-        <div class="card">
-            <i class="fas fa-pen-nib fa-3x" style="color:var(--theme-color);"></i>
-            <h3>Article Writer</h3>
-            <p>Professional SEO content creation and copywriting tailored for top-tier digital platforms.</p>
+        <div class="service-card">
+            <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>SEO, Meta & Google Ads</h3>
+            <p>Dominate search rankings and social feeds. I craft data-driven ad campaigns and advanced SEO strategies to multiply your ROI effortlessly.</p>
         </div>
-        <div class="card">
-            <i class="fas fa-shopping-cart fa-3x" style="color:var(--theme-color);"></i>
-            <h3>E-commerce Solutions</h3>
-            <p>Full-scale business solutions, brand identity, and advanced online shop management.</p>
-        </div>
-        <div class="card">
-            <i class="fas fa-laptop-code fa-3x" style="color:var(--theme-color);"></i>
-            <h3>Web Strategy</h3>
-            <p>End-to-end IT administration, architectural planning, and rapid digital growth strategies.</p>
-        </div>
-    </section>
 
-    <h2 class="section-title">Latest <span>Insights</span></h2>
-    <section id="blog" class="grid-container">
-        <div class="blog-card">
-            <span class="blog-date">LATEST UPDATE</span>
-            <div class="blog-title">Digital Marketing Trends 2026</div>
-            <p class="blog-excerpt">Exploring the new era of AI-driven marketing strategies and how automation is reshaping the future of digital presence...</p>
+        <div class="service-card">
+            <div class="service-icon"><i class="fas fa-rocket"></i></div>
+            <h3>Digital Marketing Solution</h3>
+            <p>A 360-degree approach to scale your brand. From content strategy to audience targeting, I provide complete blueprints for digital dominance.</p>
         </div>
-        <div class="blog-card">
-            <span class="blog-date">TIPS & TRICKS</span>
-            <div class="blog-title">SEO Secrets for Beginners</div>
-            <p class="blog-excerpt">Discover the hidden algorithms and proven methods to rank your content effortlessly on the first page of Google...</p>
-        </div>
-    </section>
 
-    <h2 class="section-title">Featured <span>Tracks</span></h2>
-    <div id="song-section" class="song-wrapper">
-        <div class="song-container">
-            <iframe src="https://www.youtube.com/embed/pd1flClqNPc" title="Fahim Official Track 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="service-card">
+            <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3>Cybersecurity Solution</h3>
+            <p>Protect your digital assets. I implement robust security protocols, vulnerability assessments, and secure architectures to keep hackers at bay.</p>
         </div>
-        <div class="song-container">
-            <iframe src="https://www.youtube.com/embed/ExAire1rQpQ" title="Fahim Official Track 2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div>
-    
-    <div style="text-align: center;">
-        <a href="https://iamfahimofficial.github.io/Playlist" target="_blank" class="view-more-songs">Discover More Songs <i class="fas fa-headphones" style="margin-left: 5px;"></i></a>
-    </div>
+
+    </section>
 
     <footer>
-        <div class="footer-links">
-           <a href="mailto:fbinfaheem@gmail.com"><i class="fas fa-envelope" style="color: var(--theme-color); margin-right: 5px;"></i> info@fahimofficial.com</a>
-           <span style="color: #444;">|</span> 
-           <a href="mailto:support@fahix.com"><i class="fas fa-headset" style="color: var(--theme-color); margin-right: 5px;"></i> support@fahix.com</a>
+        <div class="footer-links" style="margin-bottom: 20px;">
+           <a href="mailto:fbinfaheem@gmail.com"><i class="fas fa-envelope" style="color: var(--theme-color);"></i> info@fahimofficial.com</a>
+           <span style="color: #333;">|</span> 
+           <a href="mailto:support@fahix.com"><i class="fas fa-headset" style="color: var(--theme-color);"></i> support@fahix.com</a>
         </div>
-        <p><i class="fas fa-map-marker-alt" style="color: var(--theme-color); margin-right: 5px;"></i> Chattogram, Bangladesh</p>
-        <p class="copyright-tag">© 31-01-2026 = 11:25 AM Fahim Official ✔️ All Rights Reserved </p>
+        <p style="color: var(--text-muted);"><i class="fas fa-map-marker-alt" style="color: var(--theme-color);"></i> Chattogram, Bangladesh</p>
+        <p class="copyright-tag">© 2026 Fahim Official ✔️ All Rights Reserved </p>
     </footer>
 
 </body>
-    </html> 
+                </html>
