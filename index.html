@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fahim Ahammad Mazumder - Digital Strategist, Cybersecurity & Marketing Expert">
-    <title>Fahim Ahammad Mazumder | Premium Official</title>
-    
+    <title>Fahim Ahammad Mazumder | Official</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Space+Grotesk:wght@500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --theme-color: #ff9100; 
-            --bg-color: #050505;
-            --text-color: #ffffff;
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
+            --theme-color: #ff9100;
+            --theme-gradient: linear-gradient(135deg, #ff9100, #ff3300);
+            --bg-dark: #0a0f16;
+            --glass-bg: rgba(15, 20, 28, 0.7);
+            --glass-border: rgba(255, 145, 0, 0.2);
+            --text-main: #ffffff;
+            --text-muted: #b0bac5;
         }
 
         * {
@@ -26,487 +25,369 @@
         }
 
         body {
-            /* Premium Tech Background with subtle glowing orbs */
-            background-color: var(--bg-color);
-            background-image: 
-                radial-gradient(circle at 15% 30%, rgba(255, 145, 0, 0.08), transparent 25%),
-                radial-gradient(circle at 85% 70%, rgba(255, 255, 255, 0.03), transparent 25%);
-            background-attachment: fixed;
-            color: var(--text-color);
-            font-family: 'Outfit', sans-serif;
+            background: radial-gradient(circle at top right, rgba(255, 145, 0, 0.08), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(0, 115, 255, 0.05), transparent 40%),
+                        linear-gradient(rgba(10, 15, 22, 0.92), rgba(10, 15, 22, 0.98)), 
+                        url('IMG_20260127_173130.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-main);
+            font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
             overflow-x: hidden;
-            line-height: 1.6;
         }
 
-        h1, h2, h3, .mini-btn, .orange-btn, .blog-date {
-            font-family: 'Space Grotesk', sans-serif;
+        h1, h2, h3, .mini-btn, .premium-btn {
+            font-family: 'Montserrat', sans-serif;
         }
 
-        /* Nav Buttons - Mobile Friendly Scrollable */
-        .nav-wrapper {
+        /* --- Floating Navigation --- */
+        .header-nav {
             position: fixed;
-            top: 15px;
+            top: 20px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
-            width: 95%;
-            max-width: 600px;
-            background: rgba(10, 10, 10, 0.6);
-            backdrop-filter: blur(12px);
+            display: flex;
+            gap: 10px;
+            width: max-content;
+            max-width: 95%;
+            padding: 12px 25px;
+            background: rgba(10, 15, 22, 0.85);
+            backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
             border-radius: 50px;
-            padding: 8px 15px;
-        }
-
-        .header-nav {
-            display: flex;
-            gap: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             overflow-x: auto;
-            scrollbar-width: none; /* Hide scrollbar Firefox */
-            justify-content: flex-start;
-            align-items: center;
         }
-        
-        .header-nav::-webkit-scrollbar { display: none; } /* Hide scrollbar Chrome/Safari */
-
-        @media (min-width: 480px) {
-            .header-nav { justify-content: center; }
-        }
+        .header-nav::-webkit-scrollbar { display: none; }
 
         .mini-btn {
-            padding: 6px 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid transparent;
-            border-radius: 30px;
-            color: #ddd;
+            padding: 8px 16px;
+            color: var(--text-main);
             text-decoration: none;
             font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: all 0.3s ease;
+            border-radius: 30px;
+            transition: 0.3s;
             white-space: nowrap;
         }
 
         .mini-btn:hover {
-            background: rgba(255, 145, 0, 0.1);
-            border-color: var(--theme-color);
-            color: var(--theme-color);
+            background: var(--theme-gradient);
+            color: #fff;
         }
 
-        /* Hero Section */
+        /* --- Hero Section --- */
         .hero {
-            height: 40vh;
+            min-height: 40vh;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
             text-align: center;
-            padding-bottom: 20px;
+            padding-top: 100px;
         }
 
         .hero h1 {
             font-size: clamp(2.5rem, 8vw, 5rem);
             font-weight: 900;
-            letter-spacing: -1.5px;
-            background: linear-gradient(135deg, #ffffff 20%, var(--theme-color) 100%);
+            color: #fff;
+        }
+        .hero h1 span {
+            background: var(--theme-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            line-height: 1.1;
         }
 
         .hero-copy {
-            font-size: 13px;
-            color: #aaa;
-            margin-top: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-weight: 500;
-            letter-spacing: 1px;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
+        .verify-badge-blue { color: #1DA1F2; }
 
-        .verify-badge-blue { color: #1DA1F2; font-size: 14px; }
-
-        /* Profile Card - Enhanced Glassmorphism */
+        /* --- Profile Card --- */
         .profile-card {
             background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            padding: 40px 30px;
+            backdrop-filter: blur(25px);
+            padding: 50px 35px;
             border-radius: 24px;
             border: 1px solid var(--glass-border);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
             max-width: 90%;
-            width: 550px;
+            width: 500px;
             margin: 0 auto 50px auto;
             text-align: center;
+        }
+
+        .img-container {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 25px auto;
             position: relative;
+        }
+        .img-container::after {
+            content: '';
+            position: absolute;
+            top: -4px; left: -4px; right: -4px; bottom: -4px;
+            background: var(--theme-gradient);
+            border-radius: 50%;
+            z-index: -1;
         }
 
         .inline-logo {
-            width: 90px; 
-            height: 90px;
+            width: 100%; height: 100%;
             border-radius: 50%;
-            border: 2px solid var(--theme-color);
-            padding: 3px;
-            margin-bottom: 20px;
+            border: 4px solid var(--bg-dark);
             object-fit: cover;
-            box-shadow: 0 0 20px rgba(255, 145, 0, 0.2);
         }
 
         .verified-name {
-            font-size: clamp(1.5rem, 5vw, 2.2rem);
+            font-size: 1.8rem;
             font-weight: 700;
-            color: #fff;
+            color: white;
             display: block;
-            font-family: 'Space Grotesk', sans-serif;
         }
-
-        .verify-badge { color: var(--theme-color); margin-left: 5px; font-size: 18px; }
+        .verify-badge { color: var(--theme-color); margin-left: 5px; }
 
         .tagline {
-            color: #888;
-            margin-top: 8px;
-            font-size: 12px;
-            text-transform: uppercase;
-            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 13px;
             letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        /* Social Links - Brand Colors Update */
+        /* --- Social Links --- */
         .social-links {
-            margin-top: 30px;
+            margin-top: 35px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
         .social-links a {
-            font-size: 26px;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: inline-block;
-        }
-        
-        /* App Specific Colors */
-        .fb { color: #1877F2; }
-        .ig { color: #E4405F; }
-        .in { color: #0A66C2; }
-        .wa { color: #25D366; }
-        .yt { color: #FF0000; }
-        .tk { color: #fff; filter: drop-shadow(2px 2px 0px #ff0050) drop-shadow(-2px -2px 0px #00f2fe); }
-        .gh { color: #f0f0f0; }
-        .tw { color: #1DA1F2; }
-
-        .social-links a:hover { 
-            transform: translateY(-5px) scale(1.1); 
-            filter: brightness(1.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px; height: 42px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            color: var(--text-muted);
+            font-size: 18px;
+            transition: 0.4s;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* Action Buttons */
+        /* Official Brand Hovers */
+        .social-links a.fb:hover { background: #1877F2; color: #fff; }
+        .social-links a.ig:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); color: #fff; }
+        .social-links a.in:hover { background: #0A66C2; color: #fff; }
+        .social-links a.wa:hover { background: #25D366; color: #fff; }
+        .social-links a.yt:hover { background: #FF0000; color: #fff; }
+        .social-links a.tk:hover { background: #000; color: #fff; }
+        .social-links a.gh:hover { background: #fff; color: #000; }
+        .social-links a.tw:hover { background: #000; color: #fff; }
+
+        /* --- Buttons --- */
         .btn-group {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            padding: 10px;
+            gap: 20px;
             flex-wrap: wrap;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
         }
 
-        .orange-btn {
-            padding: 15px 30px;
+        .premium-btn {
+            padding: 15px 35px;
             font-size: 13px;
-            font-weight: 700;
+            font-weight: 800;
             color: #000;
             text-decoration: none;
-            background: var(--theme-color);
+            background: var(--theme-gradient);
             border-radius: 12px;
-            transition: all 0.3s ease;
-            text-align: center;
-            min-width: 160px;
+            transition: 0.3s;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(255, 145, 0, 0.3);
+            letter-spacing: 1.5px;
         }
-
-        .orange-btn.outline {
+        .premium-btn-outline {
             background: transparent;
-            color: var(--theme-color);
-            border: 1px solid var(--theme-color);
-            box-shadow: none;
+            color: var(--text-main);
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
+        .premium-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255, 145, 0, 0.3); }
 
-        .orange-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 145, 0, 0.5);
-            background: #fff;
-            color: #000;
-            border-color: #fff;
-        }
-
+        /* --- Section Titles --- */
         .section-title {
             text-align: center;
             font-size: 2rem;
             color: #fff;
-            margin: 20px 0 40px 0;
-            font-weight: 700;
+            margin: 60px 0 40px 0;
+            font-weight: 900;
         }
+        .section-title span { color: var(--theme-color); }
 
-        .section-title span {
-            color: var(--theme-color);
-        }
-
-        /* Unique Services Cards */
-        .grid-container {
+        /* --- Services Grid --- */
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            padding: 0 5%;
+            padding: 0 20px 60px 20px;
             max-width: 1200px;
-            margin: 0 auto 70px auto;
+            margin: 0 auto;
         }
 
-        .card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            padding: 35px 25px;
+        .service-card {
+            background: rgba(20, 25, 34, 0.6);
+            padding: 40px 30px;
             border-radius: 20px;
-            text-align: left;
-            border: 1px solid var(--glass-border);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Premium Glow Effect on Hover */
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; height: 3px;
-            background: linear-gradient(90deg, transparent, var(--theme-color), transparent);
-            opacity: 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: 0.4s;
         }
-
-        .card:hover {
+        .service-card:hover {
             transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 145, 0, 0.3);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border-color: var(--theme-color);
         }
 
-        .card:hover::before { opacity: 1; }
-
-        .card i {
-            font-size: 2.5rem;
-            color: var(--theme-color);
-            margin-bottom: 20px;
+        .service-icon {
+            width: 60px; height: 60px;
             background: rgba(255, 145, 0, 0.1);
-            width: 70px; height: 70px;
+            color: var(--theme-color);
+            border-radius: 15px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 { color: #fff; margin-bottom: 12px; }
+        .service-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+        /* --- Footer (Updated for Single Line Email) --- */
+        footer {
+            background: rgba(5, 8, 12, 0.95);
+            padding: 60px 20px 40px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap; /* Keeps it responsive on very small screens */
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: var(--text-main) !important; /* Forces color to stay white, not blue */
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: 0.3s;
             display: flex;
             align-items: center;
-            justify-content: center;
-            border-radius: 16px;
+            gap: 8px;
         }
 
-        .card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
-            color: #fff;
+        .footer-links a:hover {
+            color: var(--theme-color) !important;
         }
 
-        .card p {
-            color: #999;
-            font-size: 0.95rem;
-        }
-
-        /* Blog Section Update */
-        .blog-card {
-            background: var(--glass-bg);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid var(--glass-border);
-            transition: 0.3s;
-        }
-        
-        .blog-card:hover { border-color: var(--theme-color); }
-
-        .blog-date {
-            font-size: 11px;
-            color: var(--theme-color);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .blog-title {
-            font-size: 1.4rem;
-            margin: 10px 0;
-            color: #fff;
-        }
-
-        /* Songs Section */
-        .song-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 5%;
-        }
-
-        .song-container {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .song-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .view-more-songs {
-            display: table;
-            margin: 40px auto;
-            color: #fff;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            border-bottom: 1px solid var(--theme-color);
-            padding-bottom: 3px;
-            transition: 0.3s;
-        }
-
-        .view-more-songs:hover { color: var(--theme-color); letter-spacing: 1px; }
-
-        /* Footer */
-        footer {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 50px 20px 30px;
-            text-align: center;
-            border-top: 1px solid var(--glass-border);
-            margin-top: 60px;
-        }
-
-        footer a { color: #aaa; text-decoration: none; transition: 0.3s; }
-        footer a:hover { color: var(--theme-color); }
-        
-        .copyright-tag { color: #555; margin-top: 20px; font-size: 12px; }
-
+        .copyright-tag { margin-top: 20px; font-size: 12px; color: #666; }
     </style>
 </head>
 <body>
 
-    <div class="nav-wrapper">
-        <nav class="header-nav">
-            <a href="#" class="mini-btn">HOME</a>
-            <a href="#about" class="mini-btn">ABOUT</a>
-            <a href="#services" class="mini-btn">SERVICES</a>
-            <a href="#shop" class="mini-btn">SHOP</a>
-            <a href="#blog" class="mini-btn">BLOG</a>
-            <a href="https://iamfahimofficial.github.io/Playlist" target="_blank" class="mini-btn">PLAYLIST</a>
-        </nav>
-    </div>
+    <nav class="header-nav">
+        <a href="#" class="mini-btn">Home</a>
+        <a href="#about" class="mini-btn">Profile</a>
+        <a href="#services" class="mini-btn">Services</a>
+        <a href="https://iamfahimofficial.github.io/fahix-" target="_blank" class="mini-btn">Shop</a>
+        <a href="https://iamfahimofficial.github.io/Playlist" target="_blank" class="mini-btn" style="color: var(--theme-color);">Playlist</a>
+    </nav>
 
     <header class="hero">
-        <h1>FAHIM OFFICIAL</h1>
-        <div class="hero-copy">@iamfahimofficial <i class="fas fa-certificate verify-badge-blue"></i></div>
+        <h1>FAHIM <span>OFFICIAL</span></h1>
+        <div class="hero-copy">@iamfahimofficial <i class="fas fa-check-circle verify-badge-blue"></i></div>
     </header>
 
     <section id="about">
         <div class="profile-card">
-            <img src="FB_IMG_17576597773337071-removebg-preview.png" class="inline-logo" alt="Fahim Profile">
+            <div class="img-container">
+                <img src="FB_IMG_17576597773337071-removebg-preview.png" class="inline-logo" alt="Fahim Ahammad Mazumder">
+            </div>
             <span class="verified-name">Fahim Ahammad Mazumder <i class="fas fa-check-circle verify-badge"></i></span>
-            <p class="tagline">Digital Strategist & Cybersecurity Expert</p>
+            <p class="tagline">Digital Strategist & IT Consultant</p>
             
             <div class="social-links">
-                <a href="https://facebook.com/iamfahimofficial" target="_blank" class="fb"><i class="fab fa-facebook"></i></a>
+                <a href="https://facebook.com/iamfahimofficial" target="_blank" class="fb"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://Instagram.com/iamfahimofficial" target="_blank" class="ig"><i class="fab fa-instagram"></i></a>
-                <a href="https://linkedin.com/in/iamfahimofficial-" target="_blank" class="in"><i class="fab fa-linkedin"></i></a>
+                <a href="https://linkedin.com/in/iamfahimofficial-" target="_blank" class="in"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://wa.me/8801317621550" target="_blank" class="wa"><i class="fab fa-whatsapp"></i></a>
                 <a href="https://youtube.com/@iamfahimofficial" target="_blank" class="yt"><i class="fab fa-youtube"></i></a>
                 <a href="https://tiktok.com/@iamfahimofficiall" target="_blank" class="tk"><i class="fab fa-tiktok"></i></a>
                 <a href="https://github.com/iamfahimofficial" target="_blank" class="gh"><i class="fab fa-github"></i></a>
                 <a href="https://x.com/xfahimofficial" target="_blank" class="tw"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
-            <br>
-            <a href="https://iamfahimofficial.github.io/Portfolio/" target="_blank" style="color:#aaa; text-decoration:none; font-size:14px; border-bottom: 1px dashed #666; padding-bottom: 2px;">View Detailed Portfolio</a>
         </div>
     </section>
 
-    <section id="shop" class="btn-group">
-        <a href="https://iamfahimofficial.github.io/fahix-" target="_blank" class="orange-btn">Visit Shop</a>
-        <a href="https://iamfahimofficial.github.io/Playlist/" target="_blank" class="orange-btn outline">My Songs</a>
+    <section class="btn-group">
+        <a href="https://iamfahimofficial.github.io/Portfolio/" target="_blank" class="premium-btn">View Full Portfolio</a>
+        <a href="https://iamfahimofficial.github.io/fahix-" target="_blank" class="premium-btn premium-btn-outline">Explore Shop</a>
     </section>
 
-    <h2 class="section-title">Premium <span>Services</span></h2>
-    <section id="services" class="grid-container">
+    <h2 class="section-title">Exclusive <span>Expertise</span></h2>
+    <section id="services" class="services-grid">
         
-        <div class="card">
-            <i class="fas fa-globe"></i>
+        <div class="service-card">
+            <div class="service-icon"><i class="fas fa-globe"></i></div>
             <h3>Portfolio Design & Domain Setup</h3>
-            <p>End-to-end premium portfolio creation with custom domain configuration and secure hosting setup.</p>
+            <p>Stand out with a premium, custom-coded personal or agency portfolio. Includes end-to-end domain registration and high-speed hosting setup.</p>
         </div>
 
-        <div class="card">
-            <i class="fas fa-chart-line"></i>
-            <h3>SEO Optimization</h3>
-            <p>Advanced Search Engine Optimization to rank your website organically on the first page of Google.</p>
+        <div class="service-card">
+            <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>SEO Meta and Google Adds</h3>
+            <p>Dominate search rankings and social feeds. I craft data-driven ad campaigns and advanced SEO strategies to multiply your ROI effortlessly.</p>
         </div>
 
-        <div class="card">
-            <i class="fas fa-bullseye"></i>
-            <h3>Meta & Google Ads</h3>
-            <p>Data-driven targeted advertising campaigns on Facebook, Instagram, and Google Networks for maximum ROI.</p>
-        </div>
-
-        <div class="card">
-            <i class="fas fa-network-wired"></i>
+        <div class="service-card">
+            <div class="service-icon"><i class="fas fa-rocket"></i></div>
             <h3>Digital Marketing Solution</h3>
-            <p>Complete 360° marketing strategy, brand building, and content administration for business growth.</p>
+            <p>A 360-degree approach to scale your brand. From content strategy to audience targeting, I provide complete blueprints for digital dominance.</p>
         </div>
 
-        <div class="card">
-            <i class="fas fa-shield-halved"></i>
+        <div class="service-card">
+            <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
             <h3>Cybersecurity Solution</h3>
-            <p>Robust vulnerability assessment, threat protection, and digital security planning for your online assets.</p>
+            <p>Protect your digital assets. I implement robust security protocols, vulnerability assessments, and secure architectures to keep hackers at bay.</p>
         </div>
 
     </section>
-
-    <h2 class="section-title">Latest <span>Insights</span></h2>
-    <section id="blog" class="grid-container" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-        <div class="blog-card">
-            <span class="blog-date">CYBERSECURITY</span>
-            <div class="blog-title">Protecting Digital Assets in 2026</div>
-            <p style="color:#888; font-size:14px;">Essential security measures every business owner must implement to prevent modern cyber attacks...</p>
-        </div>
-        <div class="blog-card">
-            <span class="blog-date">MARKETING</span>
-            <div class="blog-title">The Future of AI in SEO</div>
-            <p style="color:#888; font-size:14px;">How artificial intelligence is completely reshaping keyword research and content ranking...</p>
-        </div>
-    </section>
-
-    <h2 class="section-title">Featured <span>Media</span></h2>
-    <div id="song-section" class="song-wrapper">
-        <div class="song-container"><iframe src="https://www.youtube.com/embed/pd1flClqNPc" allowfullscreen></iframe></div>
-        <div class="song-container"><iframe src="https://www.youtube.com/embed/ExAire1rQpQ" allowfullscreen></iframe></div>
-    </div>
-    <a href="https://iamfahimofficial.github.io/Playlist" target="_blank" class="view-more-songs">Explore Full Playlist →</a>
 
     <footer>
-        <div style="margin-bottom: 15px; font-family: 'Space Grotesk', sans-serif;">
-           <a href="mailto:fbinfaheem@gmail.com">info@fahimofficial.com</a> &nbsp;|&nbsp; <a href="mailto:support@fahix.com">support@fahix.com</a>
+        <div class="footer-links">
+           <a href="mailto:fbinfaheem@gmail.com"><i class="fas fa-envelope" style="color: var(--theme-color);"></i> info@fahimofficial.com</a>
+           <span style="color: rgba(255,255,255,0.2);">|</span> 
+           <a href="mailto:support@fahix.com"><i class="fas fa-headset" style="color: var(--theme-color);"></i> support@fahix.com</a>
         </div>
-        <p style="color: #888;">Chattogram, Bangladesh</p>
-        <p class="copyright-tag">© 2026 Fahim Official ✔️ All Rights Reserved</p>
+        <p style="color: var(--text-muted); font-size: 13px; margin-top: 10px;">
+            <i class="fas fa-map-marker-alt" style="color: var(--theme-color);"></i> Chattogram, Bangladesh
+        </p>
+        <p class="copyright-tag">© 2026 Fahim Official ✔️ All Rights Reserved </p>
     </footer>
 
 </body>
 </html>
+ 
