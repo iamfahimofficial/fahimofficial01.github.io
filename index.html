@@ -24,14 +24,13 @@
             background-size: cover;
             color: var(--text-color);
             font-family: 'Montserrat', sans-serif;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
+            line-height: 1.4;
         }
 
-        /* Nav Buttons - Strict Single Line */
+        /* --- Header: Short & Compact --- */
         .header-nav {
             position: fixed;
-            top: 20px;
+            top: 8px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
@@ -39,187 +38,128 @@
             gap: 4px;
             width: 98%;
             justify-content: center;
-            flex-wrap: nowrap;
         }
 
         .mini-btn {
-            padding: 5px 8px;
+            padding: 4px 8px;
             background: rgba(0, 0, 0, 0.8);
-            border: 1px solid rgba(255, 145, 0, 0.3);
-            border-radius: 50px;
+            border: 1px solid var(--theme-color);
+            border-radius: 4px;
             color: var(--theme-color);
             text-decoration: none;
             font-size: 9px;
             font-weight: bold;
-            text-transform: uppercase;
-            transition: 0.3s;
             white-space: nowrap;
         }
 
-        .mini-btn:hover {
-            background: var(--theme-color);
-            color: black;
-        }
-
         .hero {
-            height: 35vh;
+            height: 20vh; /* আরও ছোট করা হয়েছে */
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
-            text-align: center;
+            padding-bottom: 10px;
         }
 
         .hero h1 {
-            font-size: clamp(2.2rem, 8vw, 4.5rem);
+            font-size: 1.8rem;
             font-weight: 900;
-            letter-spacing: -1px;
             background: linear-gradient(to bottom, #fff, var(--theme-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .hero-copy {
-            font-size: 11px;
-            color: #fff;
-            margin-top: 5px;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .verify-badge-blue { color: #1DA1F2; font-size: 10px; }
-
+        /* --- Profile Card: Small & Tight --- */
         .profile-card {
             background: rgba(10, 10, 10, 0.9);
-            backdrop-filter: blur(15px);
-            padding: 40px 25px;
-            border-radius: 30px;
+            padding: 15px;
+            border-radius: 15px;
             border: 1px solid rgba(255, 145, 0, 0.2);
             max-width: 90%;
-            width: 500px;
-            margin: 0 auto 40px auto;
+            width: 380px;
+            margin: 0 auto 20px auto;
             text-align: center;
         }
 
         .inline-logo {
-            width: 4.6em; 
-            height: 4.6em;
+            width: 60px; height: 60px;
             border-radius: 50%;
             border: 2px solid var(--theme-color);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             object-fit: cover;
         }
 
-        .verified-name {
-            font-size: clamp(1.4rem, 5vw, 2rem);
-            font-weight: 800;
-            color: white;
-            display: block;
-        }
-
-        .verify-badge { color: var(--theme-color); margin-left: 5px; }
-
-        .tagline {
-            color: #aaa;
-            margin-top: 5px;
-            font-size: 10px;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
+        .verified-name { font-size: 1.2rem; font-weight: 800; color: white; }
+        .tagline { color: #aaa; font-size: 9px; text-transform: uppercase; }
 
         .social-links {
-            margin-top: 25px;
+            margin-top: 12px;
             display: flex;
             justify-content: center;
-            gap: 18px;
-            flex-wrap: wrap;
+            gap: 12px;
         }
+        .social-links a { color: #fff; font-size: 18px; }
 
-        .social-links a { color: #ccc; font-size: 24px; transition: 0.3s; }
-        .social-links a:hover { color: var(--theme-color); transform: translateY(-3px); }
-
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            padding: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 60px;
-        }
-
-        .orange-btn {
-            padding: 14px 25px;
-            font-size: 12px;
-            font-weight: 900;
-            color: var(--theme-color);
-            text-decoration: none;
-            background: #000;
-            border-radius: 10px;
-            border: 1px solid var(--theme-color);
-            transition: 0.3s;
-            text-align: center;
-            min-width: 160px;
-            text-transform: uppercase;
-        }
-
-        .orange-btn:hover {
-            background: var(--theme-color);
-            color: black;
-            box-shadow: 0 0 15px var(--theme-color);
-        }
-
+        /* --- Services: Aligned Left & Rectangular (Flag style) --- */
         .section-title {
-            text-align: center;
-            font-size: 1.4rem;
+            text-align: left;
+            padding-left: 20px;
+            font-size: 1rem;
             color: var(--theme-color);
-            margin: 40px 0 30px 0;
+            margin: 20px 0 10px 0;
             text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
         .grid-container {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            padding: 0 20px 60px 20px;
+            flex-direction: column;
+            gap: 10px;
+            padding: 0 20px 40px 20px;
         }
 
-        .card, .blog-card {
-            background: rgba(255, 145, 0, 0.05);
-            padding: 30px;
-            border-radius: 20px;
-            width: 300px;
-            text-align: center;
-            border: 1px solid #333;
+        .card {
+            background: rgba(20, 20, 20, 0.8);
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--theme-color); /* পতাকার মতো লুক */
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            max-width: 500px; /* বেশি চওড়া হবে না */
         }
 
+        .card i { color: var(--theme-color); font-size: 1.2rem; min-width: 25px; }
+        .card-content { text-align: left; }
+        .card h3 { font-size: 0.9rem; color: #fff; margin-bottom: 2px; }
+        .card p { font-size: 0.75rem; color: #888; }
+
+        /* --- Footer: Short & Single Line --- */
         footer {
-            background: #080808;
-            padding: 40px 20px;
+            background: #050505;
+            padding: 20px 10px;
             text-align: center;
-            border-top: 1px solid #222;
-            font-size: 12px;
-            color: #666;
+            border-top: 1px solid #111;
         }
 
-        /* Footer Email Style - No Blue Color */
         .footer-emails {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-bottom: 15px;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            white-space: nowrap;
         }
+
         .footer-emails a {
             color: var(--text-color) !important;
             text-decoration: none;
-            transition: 0.3s;
+            font-size: 11px;
         }
-        .footer-emails a:hover {
-            color: var(--theme-color) !important;
-        }
+
+        .footer-info { font-size: 10px; color: #555; }
+        .copyright-tag { margin-top: 8px; font-size: 9px; color: #444; }
+
     </style>
 </head>
 <body>
@@ -227,21 +167,20 @@
     <nav class="header-nav">
         <a href="#" class="mini-btn">HOME</a>
         <a href="#about" class="mini-btn">ABOUT</a>
-        <a href="#shop" class="mini-btn">SHOP</a>
-        <a href="#blog" class="mini-btn">BLOG</a>
+        <a href="https://iamfahimofficial.github.io/fahix-" target="_blank" class="mini-btn">SHOP</a>
         <a href="#services" class="mini-btn">SERVICES</a>
         <a href="https://iamfahimofficial.github.io/Playlist" target="_blank" class="mini-btn">SONGS</a>
     </nav>
 
     <header class="hero">
         <h1>FAHIM OFFICIAL</h1>
-        <div class="hero-copy">@iamfahimofficial <i class="fas fa-check-circle verify-badge-blue"></i></div>
+        <div class="hero-copy" style="font-size: 10px;">@iamfahimofficial <i class="fas fa-check-circle" style="color:#1DA1F2;"></i></div>
     </header>
 
     <section id="about">
         <div class="profile-card">
-            <img src="FB_IMG_17576597773337071-removebg-preview.png" class="inline-logo" alt="Logo">
-            <span class="verified-name">Fahim Ahammad Mazumder <i class="fas fa-check-circle verify-badge"></i></span>
+            <img src="FB_IMG_17576597773337071-removebg-preview.png" class="inline-logo" alt="Fahim">
+            <span class="verified-name">Fahim Ahammad Mazumder <i class="fas fa-check-circle" style="color:var(--theme-color); font-size: 14px;"></i></span>
             <p class="tagline">Digital Strategist & Entrepreneur</p>
             <div class="social-links">
                 <a href="https://facebook.com/iamfahimofficial" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -253,33 +192,54 @@
                 <a href="https://github.com/iamfahimofficial" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="https://x.com/xfahimofficial" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
-            <br>
-            <a href="https://iamfahimofficial.github.io/Portfolio/" target="_blank" style="color:var(--theme-color); text-decoration:underline; font-size:13px;">Visit Portfolio Link</a>
+            <a href="https://iamfahimofficial.github.io/Portfolio/" target="_blank" style="color:var(--theme-color); text-decoration:none; font-size:11px; display:block; margin-top:10px; font-weight:bold;">Visit Portfolio Link</a>
         </div>
     </section>
 
-    <section id="shop" class="btn-group">
-        <a href="https://iamfahimofficial.github.io/fahix-" target="_blank" class="orange-btn">VISIT SHOP</a>
-        <a href="https://iamfahimofficial.github.io/Playlist/" target="_blank" class="orange-btn">Songs</a>
-    </section>
-
-    <h2 class="section-title">Services</h2>
+    <h2 class="section-title">My Services</h2>
     <section id="services" class="grid-container">
-        <div class="card"><i class="fas fa-globe fa-2x" style="color:var(--theme-color);"></i><h3 style="margin-top:15px;">Portfolio design&domain setup</h3><p style="margin-top:10px;">Premium portfolio creation and custom domain configuration.</p></div>
-        <div class="card"><i class="fas fa-search-dollar fa-2x" style="color:var(--theme-color);"></i><h3 style="margin-top:15px;">SEO meta and Google adds</h3><p style="margin-top:10px;">Strategic SEO optimization and targeted advertising management.</p></div>
-        <div class="card"><i class="fas fa-rocket fa-2x" style="color:var(--theme-color);"></i><h3 style="margin-top:15px;">Digital marketing solution</h3><p style="margin-top:10px;">360-degree digital growth and brand strategy.</p></div>
-        <div class="card"><i class="fas fa-user-shield fa-2x" style="color:var(--theme-color);"></i><h3 style="margin-top:15px;">Cybersecurity solution</h3><p style="margin-top:10px;">End-to-end security audits and digital asset protection.</p></div>
+        <div class="card">
+            <i class="fas fa-palette"></i>
+            <div class="card-content">
+                <h3>Portfolio design&domain setup</h3>
+                <p>Premium designs with global domain setup.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-bullhorn"></i>
+            <div class="card-content">
+                <h3>SEO meta and Google adds</h3>
+                <p>Data-driven SEO and high-ROI ad campaigns.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-chart-line"></i>
+            <div class="card-content">
+                <h3>Digital marketing solution</h3>
+                <p>Strategic growth and full brand management.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-user-shield"></i>
+            <div class="card-content">
+                <h3>Cybersecurity solution</h3>
+                <p>Security audits and digital asset protection.</p>
+            </div>
+        </div>
     </section>
 
     <footer>
         <div class="footer-emails">
-           <a href="mailto:fbinfaheem@gmail.com">info@fahimofficial.com</a>
-           <span style="color:#444">|</span>
+           <a href="mailto:info@fahimofficial.com">info@fahimofficial.com</a>
+           <span style="color:#333;">|</span>
            <a href="mailto:support@fahix.com">support@fahix.com</a>
         </div>
-        <p>Chattogram, Bangladesh</p>
-        <p class="copyright-tag">© 31-01-2026 = 11:25 AM Fahim Official ✔️ All Rights Reserved </p>
+        <div class="footer-info">Chattogram, Bangladesh</div>
+        <p class="copyright-tag">© 31-01-2026 Fahim Official ✔️ All Rights Reserved </p>
     </footer>
 
 </body>
-            </html>
+</html>
